@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "firstName": "Edilson",
+        "lastName": "Oliveira",
+        "username": "Edinho",
+        "address": {
+            "street": "Rua da Garça",
+            "number": 77,
+            "district": "Jardim Europa",
+            "city": "Paulínia"
+        },
+        "email": "edinho@email.com"
+    },
+    {
+        "id": 2,
+        "firstName": "Luiz",
+        "lastName": "Perozzo",
+        "username": "Luís do Pigas",
+        "address": {
+            "street": "Rua da tormenta",
+            "number": 24,
+            "district": "Baixada Santista",
+            "city": "Santos"
+        },
+        "email": "luis@todosemail.com"
+    },
+    {
+        "id": 3,
+        "firstName": "Bruno",
+        "lastName": "Silva",
+        "username": "Brunitinho",
+        "address": {
+            "street": "Rua delas",
+            "number": 69,
+            "district": "Jardim Itatinga",
+            "city": "Campinas"
+        },
+        "email": "brunin@doremail.com"
+    },
+    {
+        "id": 4,
+        "firstName": "Guilherme",
+        "lastName": "Mendes",
+        "username": "DW719",
+        "address": {
+            "street": "Rua Tereza Cristina Pereira",
+            "number": 719,
+            "district": "Morro dos Noias",
+            "city": "Paulínia"
+        },
+        "email": "gui@todasemail.com"
+    },
+    {
+        "id": 5,
+        "firstName": "Breno",
+        "lastName": "Rodrigues",
+        "username": "Bereno",
+        "address": {
+            "street": "Expedito Zacarias de Moura",
+            "number": 81,
+            "district": "Marieta Dian",
+            "city": "Paulínia"
+        },
+        "email": "bbreno08@gmail.com"
+    },
+    {
+        "id": 6,
+        "firstName": "Daniel",
+        "lastName": "Silva",
+        "username": "Orivaldo",
+        "address": {
+            "street": "Rua das flores",
+            "number": 101,
+            "district": "São José",
+            "city": "Pebacity"
+        },
+        "email": "dani@todasemail.com"
+    }
+]

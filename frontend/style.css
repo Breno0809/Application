@@ -1,0 +1,137 @@
+:root {
+    /* COLOR VARIABLES */
+    --primary-theme-color-v1: rgb(0, 65, 145);
+    --primary-theme-color-v2: rgb(0, 0, 255);
+    --primary-theme-color-v3: rgb(20, 110, 217);
+    
+    /* MAIN COLORS */
+    --main-bg-color-v1: rgb(20, 110, 217);
+    --main-bg-color-v2: rgb(10, 090, 217);
+    --main-bg-color-v3: rgb(05, 070, 217);
+    --main-bg-color-v4: rgb(02, 050, 217);
+    --main-bg-color-v5: #191970;
+    
+    /* SECUNDARY COLORS */
+    --form-bg-color: rgba(255, 255, 255, 0.08);
+    --header-footer-bg-color: rgb(13, 82, 166);
+    
+    /* TEXT COLOR */
+    --form-h2-color: rgba(243, 243, 243, 0.753);
+    --text-color: rgb(243, 243, 243);
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--main-bg-color-v5);
+    color: var(--text-color);
+}
+
+body h1 {
+    margin-top: 64px;
+    align-self: center;
+
+    color: var(--form-h2-color);
+}
+
+form {
+    background-color: var(--form-bg-color);
+    
+    width: 100%;
+    max-width: 500px;
+    
+    margin: 64px auto;
+    padding: 32px 64px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+form h2 {
+    align-self: center;
+
+    margin-bottom: 32px;
+    color: var(--form-h2-color);
+}
+
+.input {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+input,
+button {
+    /* RESET APPEAREANCE */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* BOX */
+    width: 100%;
+
+    padding: 16px 0;
+
+    border: none;
+    border-bottom: 1px solid var(--primary-theme-color-v3);
+
+    background-color: transparent;
+
+    outline: none;
+
+    /* TEXT */
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+button {
+    letter-spacing: 0.01em;
+    font-weight: 500;
+
+    margin-top: 16px;
+    background-color: var(--primary-theme-color-v3);
+}
+
+input ~ label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+
+    color: #ffffff99;
+
+    transition: .4s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    transform: translateY(-24px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+
+.input span.error {
+    display: flex;
+
+    padding: 0;
+
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.input span.error.active {
+    border: 1px solid red;
+    padding: 0.4em;
+}

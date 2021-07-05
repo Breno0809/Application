@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap">
+
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/validateUser.js" defer></script>
+</head>
+
+<body>
+    <!-- HOMEPAGE TITLE -->
+    <h1>Sistema de Monitoramento de Oxigênio Aplicado</h1>
+
+    <!-- FORM AREA -->
+    <form action="./pages/patient/index.html" method="POST">
+
+        <h2>Área de Login</h2>
+
+        <div class="input">
+            <input required type="email" id="useremail">
+            <label for="useremail">Email</label>
+            <span class="error"></span>
+
+        </div>
+
+        <div class="input">
+            <input required type="password" id="userpass">
+            <label for="userpass">Senha</label>
+            <span class="error"></span>
+        </div>
+
+        <button type="submit" value="Entrar">Entrar</button>
+
+        <label class="name"></label>
+
+    </form>
+</body>
+
+</html>
