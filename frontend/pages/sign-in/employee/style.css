@@ -44,6 +44,7 @@ body {
 header {
     text-align: center;
     display: flex;
+    flex-direction: column;
     background-color: var(--header-footer-bg-color);
 }
 
@@ -72,6 +73,11 @@ td {
     padding: .3rem 0rem .3rem;
     color: var(--text-color);
     border-bottom: 1px solid rgba(70, 131, 180, 0.3)
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
 }
 
 footer {

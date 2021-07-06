@@ -1,20 +1,19 @@
+/* Default Settings */
+
 :root {
     /* COLOR VARIABLES */
     --primary-theme-color-v1: rgb(0, 65, 145);
     --primary-theme-color-v2: rgb(0, 0, 255);
     --primary-theme-color-v3: rgb(20, 110, 217);
-    
     /* MAIN COLORS */
     --main-bg-color-v1: rgb(20, 110, 217);
     --main-bg-color-v2: rgb(10, 090, 217);
     --main-bg-color-v3: rgb(05, 070, 217);
     --main-bg-color-v4: rgb(02, 050, 217);
     --main-bg-color-v5: #191970;
-    
     /* SECUNDARY COLORS */
     --form-bg-color: rgba(255, 255, 255, 0.08);
     --header-footer-bg-color: rgb(13, 82, 166);
-    
     /* TEXT COLOR */
     --form-h2-color: rgba(243, 243, 243, 0.753);
     --text-color: rgb(243, 243, 243);
@@ -33,37 +32,62 @@ html {
 
 body {
     height: 100%;
-
     display: flex;
+    position: relative;
     flex-direction: column;
-
     background-color: var(--main-bg-color-v5);
     color: var(--text-color);
 }
 
-body h2 {
+
+/* Unique style of the page */
+
+header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--header-footer-bg-color);
+}
+
+header h1 {
     margin: 5px;
-    align-self: center;
 }
 
 main {
-    margin: 0 auto;
-
-    padding-top: 50px;
-
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0 1.5rem 0;
 }
 
-table, tr, th, td {
-    border: 1px solid steelblue
-}
-
-table {
-    background-color: var(--form-bg-color);
-    padding: 5px;
+main table {
+    width: 100%;
+    min-width: 750px;
+    margin: 32px 0 32px;
+    border-spacing: 0;
 }
 
 th {
-    background-color: var(--primary-bg-color-v3);
+    padding: 1rem;
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid steelblue;
+}
+
+td {
+    padding: .3rem 0rem .3rem;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(70, 131, 180, 0.3)
+}
+
+td:hover {
+    cursor: pointer;
+}
+
+footer {
+    /* height: 42px; */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--header-footer-bg-color);
 }

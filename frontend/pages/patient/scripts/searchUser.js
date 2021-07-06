@@ -17,12 +17,12 @@ async function getResponse() {
     }
 }
 
-getResponse()
+// getResponse()
 
 function show(users) {
     let mainList = document.querySelector("main")
-    // let newTable = document.createElement("table")
-    
+        // let newTable = document.createElement("table")
+
     let output = '<table><tr><th>Nome</th><th>Cidade</th></tr>'
 
     for (const user of users) {
