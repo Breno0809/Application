@@ -1,13 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-const patients = require('../../../bin/patients.json')
+// const patients = require('../../../bin/patients.json')
 
 router.use(express.json())
 
 router.get('/', (req, res) => {
     res.status(200).send(patients)
-    // res.status(200).send({ message: 'Patient Area is Alright' })
+    res.status(200).send({ message: 'Patient Area is Alright' })
 })
 
 router.post('/', (req, res) => {

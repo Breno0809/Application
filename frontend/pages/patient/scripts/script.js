@@ -2,9 +2,13 @@ const main = document.querySelector("main")
 const dataTable = [
     ['Id', 'Nome', 'Sobrenome', 'Idade', 'Urgência'],
     ['01', 'Breno', 'Rodrigues', '17', 'Consulta'],
-    ['02', 'A', 'Silva', '16', 'Emergencia'],
-    ['03', 'B', 'Oliveira', '21', 'Urgente'],
+    ['02', 'João', 'Silva', '16', 'Emergencia'],
+    ['03', 'Carlos', 'Oliveira', '21', 'Urgente'],
+    ['04', 'Julio', 'Cesar', '14', 'Consulta'],
+    ['05', 'Maria', 'Eduarda', '19', 'Emergencia'],
+    ['06', 'João', 'Pedro', '25', 'Urgente'],
 ]
+const dataTableColums = dataTable[0].length
 
 function createNewTable(container, contents) {
     let table = document.createElement('table')
@@ -31,12 +35,18 @@ function addRow(contents) {
     let tBody = document.querySelector("tbody")
 
     // ADDING TABLE HEADER
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < contents.length - 1; i++) {
         let tr = document.createElement('tr')
-        let td = document.createElement('td')
+
         tBody.appendChild(tr)
-        tr.appendChild(td)
-        console.log(i);
+
+        for (let j = 0; j < (dataTableColums); j++) {
+            let td = document.createElement('td')
+            tr.appendChild(td)
+            td.innerHTML = contents[j + 1]
+
+        }
+
     }
 
     // for (let i = 0; i < contents[0].length; i++) {

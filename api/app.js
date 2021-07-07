@@ -16,36 +16,37 @@ const oxygenRoute = require('./src/routes/oxygen/index')
 
 // Importing a template
 const Patients = require('./src/models/Patients')
+const Employee = require('./src/models/Employee')
 
 app.get('/', (req, res) => {
-    const { name, password } = req.body
-    res.status(200).send({
-        message: `Welcome ${name} to Homepage, your password is ${password}`
-    })
+    res.status(200).send({ message: `Welcome to Homepage` })
 })
 
-app.post('/', async (req, res, next) => {
-    const result = await Patients.create({})
-    .then(() => {
+app.post('/', async(req, res, next) => {
+    const result = await Patients.create(
+        req.body
+    ).then(() => {
         res.status(201).send('Patient record created successful')
-    })
-    .catch(err => {
+        console.log(result);
+    }).catch(err => {
         res.status(400).send({
             Error: 'Error: Patient record created unsuccessful',
             TypeError: err
         })
+        console.error(err);
     })
 })
 
 // LOGIN ROUTE
 app.use('/login', loginRoute)
-// EMPLOYEE ROUTE
+    // EMPLOYEE ROUTE
 app.use('/employee', employeeRoute)
-// PATIENT ROUTE
+    // PATIENT ROUTE
 app.use('/patient', patientRoute)
-// OXYGEN ROUTE
+    // OXYGEN ROUTE
 app.use('/oxygen', oxygenRoute)
 
+// Error Handling
 app.use((req, res, next) => {
     const err = new Error('Page Not Found!')
     err.status(404)
