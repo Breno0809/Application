@@ -4,7 +4,7 @@ const db = require('./db')
 
 const Patients = db.sequelize.define("Pacientes", {
     idPatient: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER.ZEROFILL,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
