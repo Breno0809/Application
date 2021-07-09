@@ -1,10 +1,10 @@
 const Sequelize = require('Sequelize')
-const sequelize = require('./db')
-const db = require('./db')
+const sequelize = require('./config/db')
+const db = require('./config/db')
 
 const Patients = db.sequelize.define("Pacientes", {
     idPatient: {
-        type: Sequelize.INTEGER.ZEROFILL,
+        type: Sequelize.INTEGER.ZEROFILL.UNSIGNED,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
@@ -33,6 +33,6 @@ const Patients = db.sequelize.define("Pacientes", {
 
 // Create Table
 // This command must be execute only once
-// Patients.sync({ force: true })
+Patients.sync()
 
 module.exports = Patients

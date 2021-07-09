@@ -9,14 +9,14 @@ router.post('/', (req, res) => {
     const response = req.body
     data = response.json()
     return res.json({
-        message: `Helo ${name}`,
-        secretMessage: `Your secret message is ${password}`
+        error: false,
+        message: 'Access allowed'
     })
 })
 
 router.use((req, res, next) => {
     const err = new Error('Page Not Found!')
-    err.status(404)
+    err.status = 404
     next(err)
 })
 

@@ -1,10 +1,10 @@
 const Sequelize = require('Sequelize')
-const sequelize = require('./db')
-const db = require('./db')
+const sequelize = require('./config/db')
+const db = require('./config/db')
 
 const Employee = db.sequelize.define("Funcionarios", {
     idEmployee: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER.ZEROFILL.UNSIGNED,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
