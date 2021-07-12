@@ -1,6 +1,21 @@
 const express = require('express')
 const router = express.Router()
 
+router.use(express.json())
+
+// Importing a template
+const Historic = require('./src/models/Historic')
+
+router.get('/', (req, res) => {
+    Patients.findAll({ // findAll() function that searches for all records
+        order: [
+            ['idHistoric', 'DESC']
+        ]
+    }).then(historic => {
+        res.json({ historic })
+    })
+})
+
 router.get('/', (req, res) => {
     res.status(200).send({ message: 'Historic Area is Alright' })
 })

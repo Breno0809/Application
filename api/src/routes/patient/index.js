@@ -1,9 +1,21 @@
 const express = require('express')
 const router = express.Router()
 
-// const patients = require('../../../bin/patients.json')
-
 router.use(express.json())
+
+// Importing a template
+const Patients = require('./src/models/Patients')
+
+/** This purpose of this method is to display all records in the Patients table */
+router.get('/', (req, res) => {
+    Patients.findAll({ // findAll() function that searches for all records
+        order: [
+            ['idPatient', 'DESC']
+        ]
+    }).then(patients => {
+        res.json({ patients })
+    })
+})
 
 router.get('/', (req, res) => {
     res.status(200).send(patients)
@@ -13,6 +25,25 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const data = req.body
     return res.status(200).send(data)
+})
+
+/** The purpose of this method is to send all data to an Patient table record */
+router.post('/', async(req, res, next) => {
+    const result = await Patients.create(
+        req.body
+    ).then(() => {
+        // res.status(201).send('Patient record created successful')
+        return res.json({
+            error: false,
+            message: 'Patient record created successful'
+        })
+    }).catch(err => {
+        // console.error(err);
+        return res.status(400).json({
+            error: true,
+            message: 'Error: Patient record created unsuccessful'
+        })
+    })
 })
 
 router.use((req, res, next) => {
