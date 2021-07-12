@@ -4,7 +4,7 @@ const router = express.Router()
 router.use(express.json())
 
 // Importing a template
-const Patients = require('./src/models/Patients')
+const Patients = require('../../models/Patients')
 
 /** This purpose of this method is to display all records in the Patients table */
 router.get('/', (req, res) => {

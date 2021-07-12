@@ -4,11 +4,15 @@ const router = express.Router()
 router.use(express.json())
 
 // Importing a template
-const Historic = require('./src/models/Historic')
+const Historic = require('../../models/Historic')
+
+router.get('/', async(req, res) => {
+    res.status(200).send({ message: 'Historic Area is Alright' })
+})
 
 router.get('/', (req, res) => {
-    Patients.findAll({ // findAll() function that searches for all records
-        order: [
+    Historic.findAll({ // findAll() function that searches for all records
+        order: [ // Sort all records by idHistoric
             ['idHistoric', 'DESC']
         ]
     }).then(historic => {
@@ -16,13 +20,34 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/', (req, res) => {
-    res.status(200).send({ message: 'Historic Area is Alright' })
+/** FILTER BY NAME */
+router.get('/historic', (req, res) => {
+    const name = req.query
+        // return res.send({ message: `Hello ${name}` })
+
+    Historic.findAll({ // findAll() function that searches for all records
+        order: [ // Sort all records by name
+            [name, 'DESC']
+        ]
+    }).then(historic => {
+        res.json({ historic })
+    })
+
 })
 
-router.get('/historic/:nm', (req, res) => {
-    const name = req.query
-    return res.send({ message: `Hello ${name}` })
+/** FILTER BY DATE */
+router.get('/historic', (req, res) => {
+    const { day, month } = req.query
+        // return res.send({ message: `Hello ${name}` })
+
+    Historic.findAll({ // findAll() function that searches for all records
+        order: [ // Sort all records by day and month
+            [day, 'DESC']
+        ]
+    }).then(historic => {
+        res.json({ historic })
+    })
+
 })
 
 router.use((req, res, next) => {

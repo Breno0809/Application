@@ -4,7 +4,7 @@ const router = express.Router()
 router.use(express.json())
 
 // Importing a template
-const Employee = require('./src/models/Employee')
+const Employee = require('../../models/Employee')
 
 /** This purpose of this method is to display all records in the Employee table */
 router.get('/', (req, res) => {

@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
+router.use(express.json())
+
 router.get('/', (req, res) => {
     res.status(200).send({
         message: 'Patient registration Area is Alright'
@@ -9,7 +11,7 @@ router.get('/', (req, res) => {
 
 router.use((req, res, next) => {
     const err = new Error('Page Not Found!')
-    err.status(404)
+    err.status = 404
     next(err)
 })
 
