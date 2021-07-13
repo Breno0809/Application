@@ -1,5 +1,5 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express'),
+    router = express.Router()
 
 router.use(express.json())
 
@@ -33,12 +33,14 @@ router.post('/', async(req, res, next) => {
         req.body
     ).then(() => {
         // res.status(201).send('Patient record created successful')
+        console.log("> Registered patient");
         return res.json({
             error: false,
             message: 'Patient record created successful'
         })
     }).catch(err => {
         // console.error(err);
+        console.log(`> There was an error in the patient's registration`);
         return res.status(400).json({
             error: true,
             message: 'Error: Patient record created unsuccessful'

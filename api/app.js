@@ -13,7 +13,9 @@ app.use(express.json())
 const employeeRoute = require('./src/routes/employee/index'),
     patientRoute = require('./src/routes/patient/index'),
     oxygenRoute = require('./src/routes/oxygen/index'),
-    historicRoute = require('./src/routes/historic/index')
+    historicRoute = require('./src/routes/historic/index'),
+    signInPatient = require('./src/routes/singIn/patients/index'),
+    signInEmployee = require('./src/routes/singIn/employees/index')
 
 app.get('/', async(req, res) => {
     res.status(200).send({ message: `Welcome to Homepage` })
@@ -24,7 +26,7 @@ app.post('/', async(req, res) => {
 })
 
 
-// app.use('/login', loginRoute)        // LOGIN ROUTE
+// app.use('/login', loginRoute) // LOGIN ROUTE
 app.use('/employee', employeeRoute) // EMPLOYEE ROUTE
 app.use('/patient', patientRoute) // PATIENT ROUTE
 app.use('/oxygen', oxygenRoute) // OXYGEN ROUTE   
