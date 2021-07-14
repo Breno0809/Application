@@ -18,7 +18,12 @@ router.post('/', async(req, res) => {
 })
 
 router.use((req, res, next) => {
-    const err = new Error('Page Not Found!')
+    res.status(404).send({
+        error: true,
+        typeError: 404,
+        message: 'Page not Found'
+    })
+    const err = new Error('> Page Not Found!')
     err.status = 404
     next(err)
 })
