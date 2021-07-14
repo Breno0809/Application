@@ -1,50 +1,51 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express'),
+    router = express.Router()
 
 router.use(express.json())
 
 // Importing a template
 const Employee = require('../../models/Employee')
 
-/** This purpose of this method is to display all records in the Employee table */
-router.get('/', (req, res) => {
-    Employee.findAll({ // findAll() function that searches for all records
-        order: [
-            ['idEmployee', 'DESC']
-        ]
-    }).then(employee => {
-        res.json({ employee })
-    })
-})
-
-router.get('/', (req, res) => {
+/** Employee page GET Method */
+router.get('/', (req, res) => { // IT'S WORKING
     res.status(200).send({
+        error: false,
+        route: '/employee/',
+        HTTPVerb: 'GET',
         message: 'Employee Area is Alright'
     })
 })
 
-/** The purpose of this method is to send all data to an Employee table record */
-router.post('/', async(req, res, next) => {
-    const result = await Employee.create(
-        req.body
-    ).then(() => {
-        // res.status(201).send('Patient record created successful')
-        return res.json({
-            error: false,
-            message: 'Patient record created successful'
-        })
-    }).catch(err => {
-        // console.error(err);
-        return res.status(400).json({
-            error: true,
-            message: 'Error: Patient record created unsuccessful'
-        })
+/** This purpose of this method is to display all records in the Employee table */
+router.get('/all', (req, res) => { // IT'S WORKING
+    Employee.findAll({ // findAll() function that searches for all records
+        order: [
+            ['idEmployee', 'ASC'] // ASC = Ascending order
+        ]
+    }).then(employee => {
+        if (employee == null) {
+            return res.json({
+                error: false,
+                route: '/employee/all',
+                HTTPVerb: 'GET',
+                message: 'EMPLOYEE MODEL IS EMPTY'
+            })
+        } else {
+            return res.json({ employee })
+        }
     })
 })
 
-router.use((req, res, next) => {
+// Error Handling
+router.use((req, res, next) => { // IT'S WORKING
+    res.status(404).send({
+        error: true,
+        typeError: 404,
+        HTTPVerb: null,
+        message: 'Page not Found'
+    })
     const err = new Error('Page Not Found!')
-    err.status(404)
+    err.status = 404
     next(err)
 })
 

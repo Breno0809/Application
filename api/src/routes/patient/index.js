@@ -1,55 +1,88 @@
 const express = require('express'),
-    router = express.Router()
+    router = express.Router(),
+    { Op } = require('sequelize')
 
 router.use(express.json())
 
 // Importing a template
 const Patients = require('../../models/Patients')
 
-/** This purpose of this method is to display all records in the Patients table */
-router.get('/', (req, res) => {
+/** Patient page GET Method */
+router.get('/', (req, res) => { // IT'S WORKING
+    res.status(200).send({
+        error: false,
+        route: '/patient/',
+        HTTPVerb: 'GET',
+        message: 'Patient Area is Alright'
+    })
+})
+
+/** Patient page GET method to display all patients by name */
+router.get('/nome/:name', (req, res) => { // IT'S WORKING
+    let queryName = req.params.name
+    Patients.findAll({
+        where: {
+            nome: queryName
+        },
+        attributes: ['idPatient', 'nome', 'sobrenome', 'urgencia']
+    }).then(patients => {
+        // Patient Validation
+        console.log(patients);
+        if (patients == null) { // If patient EXISTS
+            return res.json({
+                error: false,
+                route: '/patient/nome',
+                HTTPVerb: 'GET',
+                message: 'Patient Area is Alright'
+            })
+        } else { // If the patient doesn't EXISTS
+            return res.json({
+                patients,
+                message: `Person not found. '${queryName}' not found in Database`
+            })
+        }
+    })
+})
+
+/** Patient page GET method for displaying all patients */
+router.get('/all', (req, res) => { // IT'S WORKING
     Patients.findAll({ // findAll() function that searches for all records
         order: [
-            ['idPatient', 'DESC']
+            ['idPatient', 'ASC'] // ASC = Ascending order
         ]
     }).then(patients => {
-        res.json({ patients })
+        if (patients == null) {
+            return res.json({
+                error: false,
+                route: '/patient/all',
+                HTTPVerb: 'GET',
+                message: 'PATIENT MODEL IS EMPTY'
+            })
+        } else {
+            return res.json({ patients })
+        }
     })
 })
 
-router.get('/', (req, res) => {
-    res.status(200).send(patients)
-    res.status(200).send({ message: 'Patient Area is Alright' })
-})
-
-router.post('/', (req, res) => {
+router.post('/', (req, res) => { // IT'S WORKING
     const data = req.body
-    return res.status(200).send(data)
-})
-
-/** The purpose of this method is to send all data to an Patient table record */
-router.post('/', async(req, res, next) => {
-    const result = await Patients.create(
-        req.body
-    ).then(() => {
-        // res.status(201).send('Patient record created successful')
-        console.log("> Registered patient");
-        return res.json({
-            error: false,
-            message: 'Patient record created successful'
-        })
-    }).catch(err => {
-        // console.error(err);
-        console.log(`> There was an error in the patient's registration`);
-        return res.status(400).json({
-            error: true,
-            message: 'Error: Patient record created unsuccessful'
-        })
+    return res.status(200).send({
+        error: false,
+        route: '/patient/',
+        HTTPVerb: 'POST',
+        message: 'Patient POST is Alright',
+        body: data
     })
 })
 
-router.use((req, res, next) => {
-    const err = new Error('Page Not Found!')
+router.use((req, res, next) => { // IT'S WORKING
+    res.status(404).send({
+        error: true,
+        typeError: 404,
+        HTTPVerb: null,
+        message: 'Page not Found'
+    })
+    const err = new Error('> Page Not Found!')
     err.status = 404
     next(err)
 })
