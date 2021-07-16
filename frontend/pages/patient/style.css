@@ -33,14 +33,10 @@ html {
 body {
     height: 100%;
     display: flex;
-    position: relative;
     flex-direction: column;
     background-color: var(--main-bg-color-v5);
     color: var(--text-color);
 }
-
-
-/* Unique style of the page */
 
 header {
     text-align: center;
@@ -50,7 +46,71 @@ header {
 }
 
 header h1 {
-    margin: 5px;
+    letter-spacing: 1px;
+}
+
+header h1,
+nav {
+    padding-top: .6em;
+    padding-bottom: .6em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 1.5em;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+section,
+#exit {
+    margin: 0;
+}
+
+#exit {
+    color: rgb(238, 52, 52);
+    font-weight: bold;
+}
+
+#exit:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+    /* border: 1px solid rgb(255, 49, 49); */
+}
+
+.route {
+    padding: 0 .5rem 0 .5rem;
+    margin-right: 1rem;
+}
+
+.route:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer {
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--header-footer-bg-color);
 }
 
 main {
@@ -60,10 +120,8 @@ main {
     padding: 0 1.5rem 0;
 }
 
-a {
-    text-decoration: none;
-    color: var(--text-color);
-}
+
+/* Unique style of the page */
 
 main table {
     width: 100%;
@@ -100,12 +158,4 @@ td:first-child {
 
 td:last-child {
     border-left: 2px solid rgba(70, 131, 180, 0.3);
-}
-
-footer {
-    height: 42px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--header-footer-bg-color);
 }
