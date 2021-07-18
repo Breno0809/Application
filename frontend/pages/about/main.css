@@ -1,5 +1,11 @@
 /* Unique style of the page */
 
+main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 main table {
     width: 100%;
     min-width: 750px;
