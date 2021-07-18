@@ -1,5 +1,5 @@
 const main = document.querySelector("main"),
-    tableHead = ['Código', 'Nome', 'Sobrenome', 'Idade', 'Urgência'],
+    tableHead = ['Código', 'Nome Completo', 'Idade', 'Urgência'],
     tableHeadLength = tableHead.length,
     urlUser = 'https://google.com.br'
     /**
@@ -7,16 +7,16 @@ const main = document.querySelector("main"),
      * neste caso é apenas um arquivo pré definido para poder exemplificar o código
      */
 const dataTable = [
-    { id: '01', nome: 'Breno', sobrenome: 'Rodrigues', idade: '17', urgencia: 'Consulta' },
-    { id: '02', nome: 'João', sobrenome: 'Silva', idade: '16', urgencia: 'Emergencia' },
-    { id: '03', nome: 'Carlos', sobrenome: 'Oliveira', idade: '21', urgencia: 'Consulta' },
-    { id: '04', nome: 'Julio', sobrenome: 'Cesar', idade: '14', urgencia: 'Consulta' },
-    { id: '05', nome: 'Maria', sobrenome: 'Eduarda', idade: '19', urgencia: 'Emergencia' },
-    { id: '06', nome: 'João', sobrenome: 'Pedro', idade: '25', urgencia: 'Urgente' },
-    { id: '07', nome: 'Matheus', sobrenome: 'Henrique', idade: '05', urgencia: 'Urgente' },
-    { id: '08', nome: 'Thiago', sobrenome: 'Oliveria', idade: '31', urgencia: 'Emergencia' },
-    { id: '09', nome: 'José', sobrenome: 'Santos', idade: '45', urgencia: 'Consulta' },
-    { id: '10', nome: 'Walter', sobrenome: 'Sousa', idade: '51', urgencia: 'Urgente' },
+    { id: '01', nomeCompleto: 'Breno Rodrigues', idade: '17', urgencia: 'Consulta' },
+    { id: '02', nomeCompleto: 'João Silva', idade: '16', urgencia: 'Emergencia' },
+    { id: '03', nomeCompleto: 'Carlos Oliveira', idade: '21', urgencia: 'Consulta' },
+    { id: '04', nomeCompleto: 'Julio Cesar', idade: '14', urgencia: 'Consulta' },
+    { id: '05', nomeCompleto: 'Maria Eduarda', idade: '19', urgencia: 'Emergencia' },
+    { id: '06', nomeCompleto: 'João Pedro', idade: '25', urgencia: 'Urgente' },
+    { id: '07', nomeCompleto: 'Matheus Henrique', idade: '05', urgencia: 'Urgente' },
+    { id: '08', nomeCompleto: 'Thiago Oliveria', idade: '31', urgencia: 'Emergencia' },
+    { id: '09', nomeCompleto: 'José Santos', idade: '45', urgencia: 'Consulta' },
+    { id: '10', nomeCompleto: 'Walter Sousa', idade: '51', urgencia: 'Urgente' },
 ]
 
 function createNewTable(container, contents) {
@@ -53,8 +53,7 @@ function addRow(users) {
 
         // console.log(user)
         tr.appendChild(document.createElement('td')).innerHTML = user.id
-        tr.appendChild(document.createElement('td')).innerHTML = user.nome
-        tr.appendChild(document.createElement('td')).innerHTML = user.sobrenome
+        tr.appendChild(document.createElement('td')).innerHTML = user.nomeCompleto
         tr.appendChild(document.createElement('td')).innerHTML = user.idade + ' anos'
         tr.appendChild(document.createElement('td')).innerHTML = user.urgencia
 
@@ -92,6 +91,8 @@ function addRow(users) {
     } */
 }
 
+// Creating a table
 createNewTable(main, tableHead)
 
+// Adding table row
 addRow(dataTable)
