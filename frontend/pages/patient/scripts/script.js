@@ -1,7 +1,7 @@
-const main = document.querySelector("main")
-
-const tableHead = ['Código', 'Nome', 'Sobrenome', 'Idade', 'Urgência']
-const tableHeadLength = tableHead.length
+const main = document.querySelector("main"),
+    tableHead = ['Código', 'Nome', 'Sobrenome', 'Idade', 'Urgência'],
+    tableHeadLength = tableHead.length,
+    urlUser = 'https://google.com.br'
     /**
      *      dataTable deve ser um requisição da tabela de pacientes
      * neste caso é apenas um arquivo pré definido para poder exemplificar o código
@@ -49,8 +49,9 @@ function addRow(users) {
 
         // <tr> TAG WAS INCLUDED IN <tBody>
         tBody.appendChild(tr)
+        tr.classList.add('row')
 
-        console.log(user)
+        // console.log(user)
         tr.appendChild(document.createElement('td')).innerHTML = user.id
         tr.appendChild(document.createElement('td')).innerHTML = user.nome
         tr.appendChild(document.createElement('td')).innerHTML = user.sobrenome
