@@ -111,11 +111,3 @@ footer {
     flex-shrink: 0;
     padding: .6rem;
 }
-
-main {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 auto;
-    align-items: center;
-    padding: 0 1.5rem 0;
-}
