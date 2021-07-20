@@ -4,17 +4,15 @@ article {
     flex-direction: column;
     padding: 1.5rem;
     margin: 32px 12px;
-    width: 590px;
+    width: 640px;
+    /* max-width: 610px; */
     height: 455px;
+    /* max-height: 460px; */
 }
 
 article h1 {
     text-align: center;
     margin-bottom: 1rem;
-}
-
-article p {
-    margin-bottom: 1.5rem;
 }
 
 a:hover {
