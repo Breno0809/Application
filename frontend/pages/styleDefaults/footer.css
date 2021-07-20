@@ -1,0 +1,14 @@
+/* Footer default settingss */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer {
+    background-color: var(--header-footer-bg-color);
+    flex-shrink: 0;
+    padding: .6rem;
+}
