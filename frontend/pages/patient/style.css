@@ -108,14 +108,14 @@ footer {
 
 footer {
     background-color: var(--header-footer-bg-color);
-    height: 50px;
-    /* bottom: 0; */
-    /* width: 100%; */
+    flex-shrink: 0;
+    padding: .6rem;
 }
 
 main {
     display: flex;
     flex-direction: column;
+    flex: 1 0 auto;
     align-items: center;
     padding: 0 1.5rem 0;
 }
