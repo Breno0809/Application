@@ -1,5 +1,12 @@
 /* Unique style of the page */
 
+main {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 1.5rem 0;
+}
+
 main table {
     width: 100%;
     min-width: 750px;
