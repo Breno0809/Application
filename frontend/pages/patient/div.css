@@ -1,5 +1,4 @@
-div {
-    /* background: rgb(146, 157, 47); */
+div.parent {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -10,28 +9,85 @@ div {
     margin-top: .6rem;
 }
 
+div.child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+    padding: .3rem;
+    border: 1px solid rgba(70, 131, 180, 0.3);
+}
+
+input,
 button {
     /* RESET APPEAREANCE */
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    /* TEXT FORMATTING */
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.01em;
+    color: var(--text-color);
+    /* COMMON PROPERTIES */
+    outline: none;
 }
+
+
+/* LABEL CUSTOMIZATION */
+
+label {
+    margin-left: .6rem;
+    margin-right: .2rem;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+
+/* BUTTON CUSTOMIZATION */
 
 button {
     background-color: rgba(255, 255, 255, 0.08);
     border: 1px solid steelblue;
     margin: .2rem;
     padding: .3rem .6rem;
-    outline: none;
-}
-
-button {
-    font-family: "Roboto", sans-serif;
-    font-size: 1em;
-    letter-spacing: 0.01em;
-    color: var(--text-color);
 }
 
 button:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+
+/* INPUTS CUSTOMIZATION */
+
+input {
+    /* background-color: rgba(255, 255, 255, 0.08); */
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--primary-theme-color-v3);
+    width: 250px;
+    padding: .3rem;
+}
+
+
+/* CUSTOMIZING THE PLACEHOLDER */
+
+::-webkit-input-placeholder {
+    color: var(--text-color);
+}
+
+:-moz-placeholder {
+    color: var(--text-color);
+}
+
+::-moz-placeholder {
+    color: var(--text-color);
+}
+
+:-ms-input-placeholder {
+    color: var(--text-color);
 }
