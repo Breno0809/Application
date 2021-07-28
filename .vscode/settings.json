@@ -1,0 +1,28 @@
+{
+    "editor.fontSize": 16,
+    "editor.lineHeight": 24,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "prettier.eslintIntegration": true,
+    "editor.renderLineHighlight": "gutter",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.tabSize": 2,
+    "tslint.autoFixOnSave": true,
+    "window.zoomLevel": 0,
+    "extensions.ignoreRecommendations": false,
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "nunjucks": "html"
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "nunjucks": "html"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "never",
+}
