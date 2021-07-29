@@ -32,9 +32,8 @@ router.get('/search', async(req, res) => { // IT'S WORKING
         },
         attributes: ['idPatient', 'nomeCompleto', 'dataNascimento', 'urgencia']
     })
-    const queryNameInHTTPFormat = queryName.replace(' ', '%20')
 
-    console.log('> Looking for patient... ', patientExists(patientSearched))
+    console.log('> Looking for patient... ')
     if (patientExists(patientSearched)) {
         // console.log('> Patient not found')
         return res.send({
@@ -48,31 +47,6 @@ router.get('/search', async(req, res) => { // IT'S WORKING
         // console.log('> Patient was found')
         return res.send(patientSearched)
     }
-    /** 
-    await Patients.findAll({
-        where: {
-            nomeCompleto: queryName
-        },
-        attributes: ['idPatient', 'nomeCompleto', 'dataNascimento', 'urgencia']
-    }).then(patients => {
-        // Patient Validation
-        if (patients != null) { // If patient EXISTS
-            console.log('>Patient', patients);
-
-            return res.json({
-                error: false,
-                route: `/patient/search?name=${patients.nomeCompleto}`,
-                HTTPVerb: 'GET',
-                message: 'Patient search by name is Alright'
-            })
-        } else {
-            //console.error(error)
-            res.json({
-                patients,
-                message: `Person not found. '${queryName}' not found in Database`
-            })
-        }
-    }).catch(err => console.log(err))*/
 })
 
 /** Patient page GET method for displaying all patients */
