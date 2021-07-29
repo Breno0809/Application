@@ -8,17 +8,18 @@ const main = document.querySelector("main"),
      * neste caso é apenas um arquivo pré definido para poder exemplificar o código
      */
 const dataTable = [
-    { id: '01', nomeCompleto: 'Breno Rodrigues', idade: '17', urgencia: 'Consulta' },
-    { id: '02', nomeCompleto: 'João Silva', idade: '16', urgencia: 'Emergencia' },
-    { id: '03', nomeCompleto: 'Carlos Oliveira', idade: '21', urgencia: 'Consulta' },
-    { id: '04', nomeCompleto: 'Julio Cesar', idade: '14', urgencia: 'Consulta' },
-    { id: '05', nomeCompleto: 'Maria Eduarda', idade: '19', urgencia: 'Emergencia' },
-    { id: '06', nomeCompleto: 'João Pedro', idade: '25', urgencia: 'Urgente' },
-    { id: '07', nomeCompleto: 'Matheus Henrique', idade: '05', urgencia: 'Urgente' },
-    { id: '08', nomeCompleto: 'Thiago Oliveria', idade: '31', urgencia: 'Emergencia' },
-    { id: '09', nomeCompleto: 'José Santos', idade: '45', urgencia: 'Consulta' },
-    { id: '10', nomeCompleto: 'Walter Sousa', idade: '51', urgencia: 'Urgente' },
+    { idPatient: '01', nomeCompleto: 'Breno Rodrigues', dataNascimento: '17', urgencia: 'Consulta' },
+    { idPatient: '02', nomeCompleto: 'João Silva', dataNascimento: '16', urgencia: 'Emergencia' },
+    { idPatient: '03', nomeCompleto: 'Carlos Oliveira', dataNascimento: '21', urgencia: 'Consulta' },
+    { idPatient: '04', nomeCompleto: 'Julio Cesar', dataNascimento: '14', urgencia: 'Consulta' },
+    { idPatient: '05', nomeCompleto: 'Maria Eduarda', dataNascimento: '19', urgencia: 'Emergencia' },
+    { idPatient: '06', nomeCompleto: 'João Pedro', dataNascimento: '25', urgencia: 'Urgente' },
+    { idPatient: '07', nomeCompleto: 'Matheus Henrique', dataNascimento: '05', urgencia: 'Urgente' },
+    { idPatient: '08', nomeCompleto: 'Thiago Oliveria', dataNascimento: '31', urgencia: 'Emergencia' },
+    { idPatient: '09', nomeCompleto: 'José Santos', dataNascimento: '45', urgencia: 'Consulta' },
+    { idPatient: '10', nomeCompleto: 'Walter Sousa', dataNascimento: '51', urgencia: 'Urgente' },
 ]
+
 const getUser = (url, nameParams) => {
     if (nameParams == null) {
         fetch(url + 'all')
