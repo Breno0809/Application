@@ -94,13 +94,15 @@ const addRecords = users => {
     }
 }
 
-        tBody.appendChild(tr)
+// Searching all users
+getUser(url)
+    // console.log(getUser(url, searchUser.value))
 
-        for (let j = 0; j < (dataTableColums); j++) {
-            let td = document.createElement('td')
-            tr.appendChild(td)
-            td.innerHTML = contents[j + 1]
+// Creating a table
+createNewTable(main)
 
+// Adding table row
+addRecords(dataTable)
 
     }
 
