@@ -46,11 +46,12 @@ const getUser = (url, nameParams) => {
     }
 }
 
-function createNewTable(container, contents) {
-    let table = document.createElement('table')
-    let tHead = document.createElement('thead')
-    let tBody = document.createElement('tbody')
-    let tr = document.createElement('tr')
+const createNewTable = container => {
+    let headerAsName = ['Código', 'Nome Completo', 'Data de Nascimento', 'Urgência']
+    let table = document.createElement('table'),
+        tHead = document.createElement('thead'),
+        tBody = document.createElement('tbody'),
+        tr = document.createElement('tr')
 
     // TABLE CREATED
     table.appendChild(tHead)
@@ -58,10 +59,10 @@ function createNewTable(container, contents) {
 
     // ADDING TABLE HEADER
     tHead.appendChild(tr)
-    for (let i = 0; i < contents.length; i++) {
+    for (let i = 0; i < headerAsName.length; i++) {
         let th = document.createElement('th')
         tr.appendChild(th)
-        th.innerHTML = contents[i]
+        th.innerHTML = headerAsName[i]
     }
 
     container.appendChild(table)
