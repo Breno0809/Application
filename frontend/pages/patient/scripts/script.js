@@ -100,7 +100,6 @@ const addRecords = users => {
             tr.appendChild(td)
             td.innerHTML = contents[j + 1]
 
-        }
 
     }
 
