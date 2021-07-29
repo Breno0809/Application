@@ -1,8 +1,7 @@
 const url = 'http://localhost:8989/patient/' // PATIENTS ROUTE
 const main = document.querySelector("main"),
-    tableHead = ['Código', 'Nome Completo', 'Idade', 'Urgência'],
-    tableHeadLength = tableHead.length,
-    urlUser = 'https://google.com.br'
+    submitSearchUser = document.querySelector('label[for="searchUser"]'),
+    searchUser = document.querySelector('input[name="searchUser"]')
     /**
      *      dataTable deve ser um requisição da tabela de pacientes
      * neste caso é apenas um arquivo pré definido para poder exemplificar o código
@@ -106,18 +105,16 @@ addRecords(dataTable)
 
 const displayAlert = message => window.alert(message)
 
-    for (let i = 0; i < contents[0].length; i++) {
-        let td = document.createElement('td')
-        tr.appendChild(td)
-        for (let j = 0; j < contents.length - 1; j++) {
-            td.innerHTML = contents[i + 1]
-            console.log(j + i);
+submitSearchUser.addEventListener('click', () => {
+    let searchUserAsName = searchUser.value
+
+    try {
+        if (searchUserAsName == '') {
+            throw err = new Error('Campo vázio. Digite um nome para resolver!')
         }
-    } */
-}
-
-// Creating a table
-createNewTable(main, tableHead)
-
-// Adding table row
-addRow(dataTable)
+        console.log(getUser(url, searchUserAsName))
+    } catch (err) {
+        console.error(err);
+        displayAlert('Por favor insira um nome.')
+    }
+})
