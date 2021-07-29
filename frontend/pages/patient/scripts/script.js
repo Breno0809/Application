@@ -2,10 +2,11 @@ const url = 'http://localhost:8989/patient/' // PATIENTS ROUTE
 const main = document.querySelector("main"),
     submitSearchUser = document.querySelector('label[for="searchUser"]'),
     searchUser = document.querySelector('input[name="searchUser"]')
-    /**
-     *      dataTable deve ser um requisição da tabela de pacientes
-     * neste caso é apenas um arquivo pré definido para poder exemplificar o código
-     */
+
+/**
+ *      dataTable deve ser um requisição da tabela de pacientes
+ * neste caso é apenas um arquivo pré definido para poder exemplificar o código
+ */
 const dataTable = [
     { idPatient: '01', nomeCompleto: 'Breno Rodrigues', dataNascimento: '17', urgencia: 'Consulta' },
     { idPatient: '02', nomeCompleto: 'João Silva', dataNascimento: '16', urgencia: 'Emergencia' },
@@ -22,7 +23,7 @@ const dataTable = [
 const getUser = (url, nameParams) => {
     if (nameParams == null) {
         // ALL PATIENTS
-        fetch(url + 'all')
+        return fetch(url + 'all')
             .then(response => {
                 // console.log('Response', response)
                 return response.json()
@@ -34,16 +35,20 @@ const getUser = (url, nameParams) => {
             .catch(error => console.log(error))
     } else {
         // PATIENT BY NAME
-        fetch(url + `search?name=${nameParams}`)
+        return fetch(url + `search?name=${nameParams}`)
             .then(response => {
                 // console.log('Response', response)
                 return response.json()
             })
             .then(users => {
-                console.log('User', users[0])
-                return users[0]
-                    // if (users.patientExists) users.patientSearched
-                    // else throw error = new Error('Usuário Não encontrado')
+                if (users.length === undefined) {
+                    console.log('Não há usuário')
+                    window.alert(`Não há ninguém chamado de ${nameParams}`)
+                        // displayAlert('Não há ninguém chamado de ')
+                }
+                if (users.length === 1) console.log('User', users)
+                else console.log('Users', users)
+                return users
             })
             .catch(error => console.error(error))
     }
@@ -98,15 +103,13 @@ const addRecords = users => {
 
 // Searching all users
 getUser(url)
-    // console.log(getUser(url, searchUser.value))
+console.log(getUser(url, searchUser.value))
 
 // Creating a table
 createNewTable(main)
 
 // Adding table row
 addRecords(dataTable)
-
-const displayAlert = message => window.alert(message)
 
 submitSearchUser.addEventListener('click', () => {
     const searchUserAsName = searchUser.value
@@ -116,9 +119,9 @@ submitSearchUser.addEventListener('click', () => {
         if (searchUserAsName == '') {
             throw err = new Error('Campo vázio. Digite um nome para resolver!')
         }
-        console.dir(user)
+        // console.log(user)
     } catch (err) {
         console.error(err);
-        displayAlert('Por favor insira um nome.')
+        window.alert('Por favor insira um nome.')
     }
 })

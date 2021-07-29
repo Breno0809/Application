@@ -35,7 +35,7 @@ router.get('/search', async(req, res) => { // IT'S WORKING
 
     console.log('> Looking for patient... ')
     if (patientExists(patientSearched)) {
-        // console.log('> Patient not found')
+        // Patient not found
         return res.send({
             error: false,
             patientExists: false,
@@ -43,10 +43,7 @@ router.get('/search', async(req, res) => { // IT'S WORKING
             HTTPVerb: 'GET',
             message: 'Patient not found'
         })
-    } else {
-        // console.log('> Patient was found')
-        return res.send(patientSearched)
-    }
+    } else return res.send(patientSearched)
 })
 
 /** Patient page GET method for displaying all patients */
