@@ -1,3 +1,4 @@
+const url = 'http://localhost:8989/patient/' // PATIENTS ROUTE
 const main = document.querySelector("main"),
     tableHead = ['Código', 'Nome Completo', 'Idade', 'Urgência'],
     tableHeadLength = tableHead.length,
@@ -18,6 +19,32 @@ const dataTable = [
     { id: '09', nomeCompleto: 'José Santos', idade: '45', urgencia: 'Consulta' },
     { id: '10', nomeCompleto: 'Walter Sousa', idade: '51', urgencia: 'Urgente' },
 ]
+const getUser = (url, nameParams) => {
+    if (nameParams == null) {
+        fetch(url + 'all')
+            .then(response => {
+                // console.log('Response', response)
+                return response.json()
+            })
+            .then(users => {
+                console.log('All users ->', users)
+                return users
+            })
+            .catch(error => console.log(error))
+    } else {
+        fetch(url + `search?name=${nameParams}`)
+            .then(response => {
+                console.log('Response', response)
+                return response.json()
+            })
+            .then(users => {
+                console.log('User', users);
+                if (users.patientExists) users
+                else throw error = new Error('Usuário Não encontrado')
+            })
+            .catch(error => console.error(error))
+    }
+}
 
 function createNewTable(container, contents) {
     let table = document.createElement('table')
