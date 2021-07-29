@@ -42,14 +42,7 @@ router.get('/search', async(req, res) => { // IT'S WORKING
         })
     } else {
         // console.log('> Patient was found')
-        return res.send({
-            error: true,
-            patientExists: true,
-            route: `/patient/search?name=${queryNameInHTTPFormat}`,
-            HTTPVerb: 'GET',
-            message: 'Patient was found',
-            patientSearched
-        })
+        return res.send(patientSearched)
     }
     /** 
     await Patients.findAll({
