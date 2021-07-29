@@ -38,9 +38,10 @@ const getUser = (url, nameParams) => {
                 return response.json()
             })
             .then(users => {
-                console.log('User', users);
-                if (users.patientExists) users
-                else throw error = new Error('Usuário Não encontrado')
+                console.log('User', users[0])
+                return users[0]
+                    // if (users.patientExists) users.patientSearched
+                    // else throw error = new Error('Usuário Não encontrado')
             })
             .catch(error => console.error(error))
     }
@@ -106,13 +107,14 @@ addRecords(dataTable)
 const displayAlert = message => window.alert(message)
 
 submitSearchUser.addEventListener('click', () => {
-    let searchUserAsName = searchUser.value
+    const searchUserAsName = searchUser.value
+    const user = getUser(url, searchUserAsName)
 
     try {
         if (searchUserAsName == '') {
             throw err = new Error('Campo vázio. Digite um nome para resolver!')
         }
-        console.log(getUser(url, searchUserAsName))
+        console.dir(user)
     } catch (err) {
         console.error(err);
         displayAlert('Por favor insira um nome.')
