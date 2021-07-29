@@ -104,7 +104,7 @@ createNewTable(main)
 // Adding table row
 addRecords(dataTable)
 
-    }
+const displayAlert = message => window.alert(message)
 
     for (let i = 0; i < contents[0].length; i++) {
         let td = document.createElement('td')
