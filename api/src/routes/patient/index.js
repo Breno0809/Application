@@ -21,10 +21,14 @@ router.get('/', res => { // IT'S WORKING
 
 /** Patient page GET method to display all patients by name */
 router.get('/search', async(req, res) => { // IT'S WORKING
-    let queryName = req.query.name
-    let patientSearched = await Patients.findAll({
+    const queryName = req.query.name
+    const queryNameInSQLFormat = `%${queryName}%`
+    const queryNameInHTTPFormat = queryName.replace(' ', '%20')
+    const patientSearched = await Patients.findAll({
         where: {
-            nomeCompleto: queryName
+            nomeCompleto: {
+                [Op.like]: queryNameInSQLFormat
+            }
         },
         attributes: ['idPatient', 'nomeCompleto', 'dataNascimento', 'urgencia']
     })
