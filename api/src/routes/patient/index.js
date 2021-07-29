@@ -7,8 +7,10 @@ router.use(express.json())
 // Importing a template
 const Patients = require('../../models/Patients')
 
+const patientExists = obj => Object.keys(obj).length === 0
+
 /** Patient page GET Method */
-router.get('/', (req, res) => { // IT'S WORKING
+router.get('/', res => { // IT'S WORKING
     res.status(200).send({
         error: false,
         route: '/patient/',
@@ -18,30 +20,62 @@ router.get('/', (req, res) => { // IT'S WORKING
 })
 
 /** Patient page GET method to display all patients by name */
-router.get('/nome/:name', (req, res) => { // IT'S WORKING
-    let queryName = req.params.name
-    Patients.findAll({
+router.get('/search', async(req, res) => { // IT'S WORKING
+    let queryName = req.query.name
+    let patientSearched = await Patients.findAll({
         where: {
-            nome: queryName
+            nomeCompleto: queryName
         },
-        attributes: ['idPatient', 'nome', 'sobrenome', 'urgencia']
+        attributes: ['idPatient', 'nomeCompleto', 'dataNascimento', 'urgencia']
+    })
+    const queryNameInHTTPFormat = queryName.replace(' ', '%20')
+
+    console.log('> Looking for patient... ', patientExists(patientSearched))
+    if (patientExists(patientSearched)) {
+        // console.log('> Patient not found')
+        return res.send({
+            error: false,
+            patientExists: false,
+            route: `/patient/search?name=${queryNameInHTTPFormat}`,
+            HTTPVerb: 'GET',
+            message: 'Patient not found'
+        })
+    } else {
+        // console.log('> Patient was found')
+        return res.send({
+            error: true,
+            patientExists: true,
+            route: `/patient/search?name=${queryNameInHTTPFormat}`,
+            HTTPVerb: 'GET',
+            message: 'Patient was found',
+            patientSearched
+        })
+    }
+    /** 
+    await Patients.findAll({
+        where: {
+            nomeCompleto: queryName
+        },
+        attributes: ['idPatient', 'nomeCompleto', 'dataNascimento', 'urgencia']
     }).then(patients => {
         // Patient Validation
-        console.log(patients);
-        if (patients == null) { // If patient EXISTS
+        if (patients != null) { // If patient EXISTS
+            console.log('>Patient', patients);
+
             return res.json({
                 error: false,
-                route: '/patient/nome',
+                route: `/patient/search?name=${patients.nomeCompleto}`,
                 HTTPVerb: 'GET',
-                message: 'Patient Area is Alright'
+                message: 'Patient search by name is Alright'
             })
-        } else { // If the patient doesn't EXISTS
-            return res.json({
+        } else {
+            //console.error(error)
+            res.json({
                 patients,
                 message: `Person not found. '${queryName}' not found in Database`
             })
         }
-    })
+    }).catch(err => console.log(err))*/
 })
 
 /** Patient page GET method for displaying all patients */
@@ -49,7 +83,8 @@ router.get('/all', (req, res) => { // IT'S WORKING
     Patients.findAll({ // findAll() function that searches for all records
         order: [
             ['idPatient', 'ASC'] // ASC = Ascending order
-        ]
+        ],
+        attributes: ['idPatient', 'nomeCompleto', 'dataNascimento', 'urgencia']
     }).then(patients => {
         if (patients == null) {
             return res.json({
@@ -61,6 +96,8 @@ router.get('/all', (req, res) => { // IT'S WORKING
         } else {
             return res.json({ patients })
         }
+    }).catch(error => {
+        console.error(error)
     })
 })
 
@@ -75,7 +112,7 @@ router.post('/', (req, res) => { // IT'S WORKING
     })
 })
 
-router.use((req, res, next) => { // IT'S WORKING
+router.use((res, next) => { // IT'S WORKING
     res.status(404).send({
         error: true,
         typeError: 404,
