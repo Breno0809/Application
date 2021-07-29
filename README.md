@@ -6,13 +6,8 @@ Essa aplicação serve para auxiliar o setor de comunicação dos hospitais, afi
 
 A primeira versão desse sistema possui como um todo um monitoramento do nível de Saturação de Oxigênio do paciente remotamente através de uma dispositivo físico construído em arduino.
 
-![Arduino](https://img1.gratispng.com/20180821/qxt/kisspng-arduino-portable-network-graphics-electronic-circu-arduino-ineconomics-5b7c133be82925.9213466315348580439509.jpg)
-
 # HOW TO USE THIS APP
 
-## 1. SubTitle 
-## 2. SubTitle 
-## 3. SubTitle
 
 # Links
 
