@@ -21,6 +21,7 @@ const dataTable = [
 
 const getUser = (url, nameParams) => {
     if (nameParams == null) {
+        // ALL PATIENTS
         fetch(url + 'all')
             .then(response => {
                 // console.log('Response', response)
@@ -32,9 +33,10 @@ const getUser = (url, nameParams) => {
             })
             .catch(error => console.log(error))
     } else {
+        // PATIENT BY NAME
         fetch(url + `search?name=${nameParams}`)
             .then(response => {
-                console.log('Response', response)
+                // console.log('Response', response)
                 return response.json()
             })
             .then(users => {
