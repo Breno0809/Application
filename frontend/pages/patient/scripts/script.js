@@ -68,35 +68,30 @@ const createNewTable = container => {
     container.appendChild(table)
 }
 
-function addRow(users) {
-    let tBody = document.querySelector("tbody")
+const removeAllRecords = parent => {
+    const firstCHildInParent = parent.firstChild
+    while (firstCHildInParent) {
+        parent.removeChild(firstCHildInParent)
+    }
+}
+
+const addRecords = users => {
+    let tBody = document.querySelector('tbody')
+    removeAllRecords(tBody)
+    console.log(users);
 
     for (const user of users) {
-        // <tr> TAG DEFINED
         let tr = document.createElement('tr')
 
-        // <tr> TAG WAS INCLUDED IN <tBody>
         tBody.appendChild(tr)
         tr.classList.add('row')
 
-        // console.log(user)
-        tr.appendChild(document.createElement('td')).innerHTML = user.id
+        tr.appendChild(document.createElement('td')).innerHTML = user.idPatient
         tr.appendChild(document.createElement('td')).innerHTML = user.nomeCompleto
-        tr.appendChild(document.createElement('td')).innerHTML = user.idade + ' anos'
+        tr.appendChild(document.createElement('td')).innerHTML = user.dataNascimento + ' anos'
         tr.appendChild(document.createElement('td')).innerHTML = user.urgencia
-
-        /**
-         *  for (let i = 0; i < tableHeadLength; i++) {
-         *      let td = document.createelement('td)
-         *      tr.appendChild(td)
-         *      console.log(user);
-         *      td.innerHTML = user
-         *  }
-         */
     }
-    /*
-    for (let i = 0; i < contents.length - 1; i++) {
-        let tr = document.createElement('tr')
+}
 
         tBody.appendChild(tr)
 
