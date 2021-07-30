@@ -20,37 +20,26 @@ const dataTable = [
     { idPatient: '10', nomeCompleto: 'Walter Sousa', dataNascimento: '51', urgencia: 'Urgente' },
 ]
 
-const getUser = (url, nameParams) => {
-    if (nameParams == null) {
+const getUser = async(url, nameParams) => {
+    if (!nameParams) {
         // ALL PATIENTS
-        return fetch(url + 'all')
-            .then(response => {
-                // console.log('Response', response)
-                return response.json()
-            })
-            .then(users => {
-                console.log('All users ->', users)
-                return users
-            })
-            .catch(error => console.log(error))
-    } else {
+        try {
+            const response = await fetch(`${url}all`)
+            const users = await response.json()
+            return users
+        } catch (error) {
+            console.error(error);
+            return false
+        }
+    }
+    try {
         // PATIENT BY NAME
-        return fetch(url + `search?name=${nameParams}`)
-            .then(response => {
-                // console.log('Response', response)
-                return response.json()
-            })
-            .then(users => {
-                if (users.length === undefined) {
-                    console.log('Não há usuário')
-                    window.alert(`Não há ninguém chamado de ${nameParams}`)
-                        // displayAlert('Não há ninguém chamado de ')
-                }
-                if (users.length === 1) console.log('User', users)
-                else console.log('Users', users)
-                return users
-            })
-            .catch(error => console.error(error))
+        const response = await fetch(`${url}search?name=${nameParams}`)
+        const users = await response.json()
+        return users
+    } catch (err) {
+        console.error(err);
+        return false
     }
 }
 
