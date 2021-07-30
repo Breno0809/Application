@@ -70,6 +70,13 @@ const removeAllRecords = parent => {
     while (firstCHildInParent) {
         parent.removeChild(firstCHildInParent)
     }
+
+const calculateBirthday = date => {
+    const today = new Date(),
+        getBithday = new Date(date),
+        dateDiff = Math.abs(today.getTime() - getBithday.getTime())
+
+    return Math.floor(dateDiff / (1000 * 60 * 60 * 24 * 365))
 }
 
 const addRecords = users => {
