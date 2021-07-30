@@ -81,25 +81,25 @@ const calculateBirthday = date => {
 
 const addRecords = users => {
     let tBody = document.querySelector('tbody')
-    removeAllRecords(tBody)
-    console.log(users);
+        // console.log(users);
+    const usersAsArray = users
 
-    for (const user of users) {
+    console.dir(usersAsArray);
+
+    for (const user of usersAsArray) {
         let tr = document.createElement('tr')
 
         tBody.appendChild(tr)
         tr.classList.add('row')
 
+        const userAge = calculateBirthday(user.dataNascimento)
+
         tr.appendChild(document.createElement('td')).innerHTML = user.idPatient
         tr.appendChild(document.createElement('td')).innerHTML = user.nomeCompleto
-        tr.appendChild(document.createElement('td')).innerHTML = user.dataNascimento + ' anos'
+        tr.appendChild(document.createElement('td')).innerHTML = `${userAge} anos`
         tr.appendChild(document.createElement('td')).innerHTML = user.urgencia
     }
 }
-
-// Searching all users
-getUser(url)
-console.log(getUser(url, searchUser.value))
 
 // Creating a table
 createNewTable(main)
