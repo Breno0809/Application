@@ -67,9 +67,8 @@ const createNewTable = container => {
 
 const removeAllRecords = parent => {
     const firstCHildInParent = parent.firstChild
-    while (firstCHildInParent) {
-        parent.removeChild(firstCHildInParent)
-    }
+    while (firstCHildInParent) parent.removeChild(firstCHildInParent)
+}
 
 const calculateBirthday = date => {
     const today = new Date(),
