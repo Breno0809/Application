@@ -104,18 +104,28 @@ console.log(getUser(url, searchUser.value))
 // Creating a table
 createNewTable(main)
 
-// Adding table row
-addRecords(dataTable)
+// const loadAllUsers = async() => {
+//     const allUsers = await getUser(url)
+//     const allUsersAsArray = new Array(allUsers)
+// }
 
-submitSearchUser.addEventListener('click', () => {
-    const searchUserAsName = searchUser.value
-    const user = getUser(url, searchUserAsName)
+// window.onload(loadAllUsers())
+
+submitSearchUser.addEventListener('click', async() => {
+    const tBody = document.querySelector('tbody'),
+        searchUserAsName = searchUser.value,
+        allUsers = await getUser(url),
+        allUsersAsArray = allUsers.patients
+
+    // removeAllRecords(tBody)
+
+    //console.log(typeof allUsers.patients, allUsers.patients);
 
     try {
+        if (allUsersAsArray) addRecords(allUsersAsArray)
         if (searchUserAsName == '') {
             throw err = new Error('Campo vázio. Digite um nome para resolver!')
-        }
-        // console.log(user)
+        } //else console.log(`Usuário ${searchUserAsName} não encontrado`)
     } catch (err) {
         console.error(err);
         window.alert('Por favor insira um nome.')
