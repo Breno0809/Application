@@ -104,8 +104,17 @@ const addRecords = users => {
     }
 }
 
-// Creating a table
+/**
+ *      The code below is to create a 
+ * table and display all records as soon
+ * the window is 'started'/'on load'.
+ */
 createNewTable(main)
+window.addEventListener('load', async() => {
+    const allUsers = await getUser(url)
+    const allUsersAsObject = await allUsers.patients
+    return addRecords(allUsersAsObject)
+})
 
 // const loadAllUsers = async() => {
 //     const allUsers = await getUser(url)
