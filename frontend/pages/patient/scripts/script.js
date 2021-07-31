@@ -84,8 +84,11 @@ const calculateBirthday = date => {
 
 const addRecords = users => {
     let tBody = document.querySelector('tbody')
-        // console.log(users);
-    const usersAsArray = users
+
+    const usersAsObject = users,
+        userID = usersAsObject.idPatient,
+        userFullName = usersAsObject.nomeCompleto,
+        userUrgency = usersAsObject.urgencia
 
 
     for (const user of usersAsArray) {
