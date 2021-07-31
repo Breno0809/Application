@@ -91,12 +91,13 @@ const addRecords = users => {
         userUrgency = usersAsObject.urgencia
 
 
-    for (const user of usersAsArray) {
+    for (const user of usersAsObject) {
         let tr = document.createElement('tr')
 
         tBody.appendChild(tr)
         tr.classList.add('row')
 
+        // console.log(typeof user, user, usersAsObject);
         const userAge = calculateBirthday(user.dataNascimento)
 
         tr.appendChild(document.createElement('td')).innerHTML = user.idPatient
