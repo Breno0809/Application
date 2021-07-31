@@ -87,7 +87,6 @@ const addRecords = users => {
         // console.log(users);
     const usersAsArray = users
 
-    console.dir(usersAsArray);
 
     for (const user of usersAsArray) {
         let tr = document.createElement('tr')
