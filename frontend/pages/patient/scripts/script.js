@@ -65,9 +65,13 @@ const createNewTable = container => {
     container.appendChild(table)
 }
 
-const removeAllRecords = parent => {
-    const firstCHildInParent = parent.firstChild
-    while (firstCHildInParent) parent.removeChild(firstCHildInParent)
+const removePreviousRecords = () => {
+    const lines = document.querySelector('table').rows
+
+    for (i = lines.length - 1; i >= 1; i--) {
+        console.log(`Deletando o ${i}º registro`);
+        document.querySelector("table").deleteRow(i)
+    }
 }
 
 const calculateBirthday = date => {
