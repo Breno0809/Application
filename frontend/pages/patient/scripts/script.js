@@ -69,7 +69,7 @@ const removePreviousRecords = () => {
     const lines = document.querySelector('table').rows
 
     for (i = lines.length - 1; i >= 1; i--) {
-        console.log(`Deletando o ${i}º registro`);
+        // console.log(`Deletando o ${i}º registro`);
         document.querySelector("table").deleteRow(i)
     }
 }
