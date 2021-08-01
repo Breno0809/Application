@@ -114,9 +114,16 @@ const addRecords = users => {
  */
 createNewTable(main)
 window.addEventListener('load', async() => {
-    const allUsers = await getUser(url)
-    const allUsersAsObject = await allUsers.patients
-    return addRecords(allUsersAsObject)
+    try {
+        const allUsers = await getUser(url)
+        if (allUsers) {
+            const allUsersAsObject = await allUsers.patients
+            return addRecords(allUsersAsObject)
+        }
+        throw err = new Error(`Não foi possível efetuar a conexão com o servidor!`)
+    } catch (err) {
+        window.alert(err)
+    }
 })
 
 submitSearchUser.addEventListener('click', async event => {
