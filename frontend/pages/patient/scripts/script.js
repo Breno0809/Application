@@ -92,12 +92,22 @@ const addRecords = users => {
         tBody.appendChild(tr)
         tr.classList.add('row')
 
-        const userAge = calculateBirthday(user.dataNascimento)
+        for (const prop in user) {
+            if (Object.hasOwnProperty.call(user, prop)) {
+                const element = user[prop];
+                let td = document.createElement('td')
+                td.classList.add('userLink')
 
-        tr.appendChild(document.createElement('td')).innerHTML = user.idPatient
-        tr.appendChild(document.createElement('td')).innerHTML = user.nomeCompleto
-        tr.appendChild(document.createElement('td')).innerHTML = `${userAge} anos`
-        tr.appendChild(document.createElement('td')).innerHTML = user.urgencia
+                if (prop === 'dataNascimento') {
+                    const userAge = calculateBirthday(element)
+                    tr.appendChild(td)
+                    td.innerHTML = `${userAge} anos`
+                } else {
+                    tr.appendChild(td)
+                    td.innerHTML = element
+                }
+            }
+        }
     }
 }
 
