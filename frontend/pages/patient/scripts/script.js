@@ -1,24 +1,7 @@
 const url = 'http://localhost:8989/patient/' // PATIENTS ROUTE
-const main = document.querySelector("main"),
-    submitSearchUser = document.querySelector('label[for="searchUser"]'),
-    searchUser = document.querySelector('input[name="searchUser"]')
-
-/**
- *      dataTable deve ser um requisição da tabela de pacientes
- * neste caso é apenas um arquivo pré definido para poder exemplificar o código
- */
-const dataTable = [
-    { idPatient: '01', nomeCompleto: 'Breno Rodrigues', dataNascimento: '17', urgencia: 'Consulta' },
-    { idPatient: '02', nomeCompleto: 'João Silva', dataNascimento: '16', urgencia: 'Emergencia' },
-    { idPatient: '03', nomeCompleto: 'Carlos Oliveira', dataNascimento: '21', urgencia: 'Consulta' },
-    { idPatient: '04', nomeCompleto: 'Julio Cesar', dataNascimento: '14', urgencia: 'Consulta' },
-    { idPatient: '05', nomeCompleto: 'Maria Eduarda', dataNascimento: '19', urgencia: 'Emergencia' },
-    { idPatient: '06', nomeCompleto: 'João Pedro', dataNascimento: '25', urgencia: 'Urgente' },
-    { idPatient: '07', nomeCompleto: 'Matheus Henrique', dataNascimento: '05', urgencia: 'Urgente' },
-    { idPatient: '08', nomeCompleto: 'Thiago Oliveria', dataNascimento: '31', urgencia: 'Emergencia' },
-    { idPatient: '09', nomeCompleto: 'José Santos', dataNascimento: '45', urgencia: 'Consulta' },
-    { idPatient: '10', nomeCompleto: 'Walter Sousa', dataNascimento: '51', urgencia: 'Urgente' },
-]
+const main = document.querySelector("main")
+const submitSearchUser = document.querySelector('label[for="searchUser"]')
+const searchUser = document.querySelector('input[name="searchUser"]')
 
 const getUser = async(url, nameParams) => {
     if (!nameParams) {
