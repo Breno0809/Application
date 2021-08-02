@@ -143,6 +143,7 @@ showAllPatients.addEventListener('click', async() => {
         if (allUsers) {
             const allUsersAsObject = await allUsers.patients
             removePreviousRecords()
+            searchUser.value = ''
             return addRecords(allUsersAsObject)
         }
         throw err = new Error(`Não foi possível efetuar a conexão com o servidor!`)
