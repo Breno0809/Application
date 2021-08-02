@@ -85,11 +85,7 @@ const calculateBirthday = date => {
 const addRecords = users => {
     let tBody = document.querySelector('tbody')
 
-    const usersAsObject = users,
-        userID = usersAsObject.idPatient,
-        userFullName = usersAsObject.nomeCompleto,
-        userUrgency = usersAsObject.urgencia
-
+    const usersAsObject = users
 
     for (const user of usersAsObject) {
         let tr = document.createElement('tr')
@@ -97,7 +93,6 @@ const addRecords = users => {
         tBody.appendChild(tr)
         tr.classList.add('row')
 
-        // console.log(typeof user, user, usersAsObject);
         const userAge = calculateBirthday(user.dataNascimento)
 
         tr.appendChild(document.createElement('td')).innerHTML = user.idPatient
