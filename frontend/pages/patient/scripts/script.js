@@ -130,18 +130,20 @@ window.addEventListener('load', async() => {
     }
 })
 
-submitSearchUser.addEventListener('click', async event => {
-    const searchUserAsName = searchUser.value,
-        allUsers = await getUser(url),
-        allUsersAsObject = allUsers.patients
-
-    removePreviousRecords()
-
+submitSearchUser.addEventListener('click', async() => {
     try {
-        if (allUsersAsObject) addRecords(allUsersAsObject)
-        if (searchUserAsName == '') throw err = new Error(
-            'Campo vázio. Digite um nome para resolver!'
-        )
+        const searchUserValue = searchUser.value
+        const allUsers = await getUser(url, searchUserValue)
+
+        if (searchUserValue == "") {
+            throw err = new Error('Campo vázio. Insira um nome primeiro!')
+        }
+        if (allUsers.patientExists === false) {
+            throw err = new Error(`Paciente '${searchUserValue}' não encontrado!`)
+        } else {
+            removePreviousRecords()
+            addRecords(allUsers)
+        }
     } catch (err) {
         console.error(err);
         window.alert(err)
