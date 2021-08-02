@@ -1,7 +1,9 @@
 const url = 'http://localhost:8989/patient/' // PATIENTS ROUTE
 const main = document.querySelector("main")
-const submitSearchUser = document.querySelector('label[for="searchUser"]')
 const searchUser = document.querySelector('input[name="searchUser"]')
+const showAllPatients = document.querySelector('button#showEveryone')
+const printTable = document.querySelector('button#printTable')
+const submitSearchUser = document.querySelector('label[for="searchUser"]')
 
 const getUser = async(url, nameParams) => {
     if (!nameParams) {
