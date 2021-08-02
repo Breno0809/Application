@@ -134,3 +134,17 @@ submitSearchUser.addEventListener('click', async() => {
         window.alert(err)
     }
 })
+
+showAllPatients.addEventListener('click', async() => {
+    try {
+        const allUsers = await getUser(url)
+        if (allUsers) {
+            const allUsersAsObject = await allUsers.patients
+            removePreviousRecords()
+            return addRecords(allUsersAsObject)
+        }
+        throw err = new Error(`Não foi possível efetuar a conexão com o servidor!`)
+    } catch (err) {
+        console.error(err)
+    }
+})
