@@ -96,13 +96,7 @@ const addRecords = users => {
     }
 }
 
-/**
- *      The code below is to create a 
- * table and display all records as soon
- * the window is 'started'/'on load'.
- */
-createNewTable(main)
-window.addEventListener('load', async() => {
+const searchByAllUsers = async() => {
     try {
         const allUsers = await getUser(url)
         if (allUsers) {
@@ -113,7 +107,15 @@ window.addEventListener('load', async() => {
     } catch (err) {
         console.error(err)
     }
-})
+}
+
+/**
+ *      The code below is to create a 
+ * table and display all records as soon
+ * the window is 'started'/'on load'.
+ */
+createNewTable(main)
+window.addEventListener('load', searchByAllUsers())
 
 submitSearchUser.addEventListener('click', async() => {
     try {
