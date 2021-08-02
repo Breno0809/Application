@@ -117,7 +117,7 @@ window.addEventListener('load', async() => {
         }
         throw err = new Error(`Não foi possível efetuar a conexão com o servidor!`)
     } catch (err) {
-        window.alert(err)
+        console.error(err)
     }
 })
 
@@ -135,6 +135,6 @@ submitSearchUser.addEventListener('click', async event => {
         )
     } catch (err) {
         console.error(err);
-        window.alert('Por favor insira um nome.')
+        window.alert(err)
     }
 })
