@@ -83,9 +83,8 @@ const calculateBirthday = date => {
 }
 
 const addRecords = users => {
-    let tBody = document.querySelector('tbody')
-
     const usersAsObject = users
+    let tBody = document.querySelector('tbody')
 
     for (const user of usersAsObject) {
         let tr = document.createElement('tr')
