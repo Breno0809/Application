@@ -39,7 +39,7 @@ router.get('/search', async(req, res) => { // IT'S WORKING
         return res.send({
             error: false,
             patientExists: false,
-            route: `/patient/search?name=${queryNameInHTTPFormat}`,
+            route: `/patients/search?name=${queryNameInHTTPFormat}`,
             HTTPVerb: 'GET',
             message: 'Patient not found'
         })
@@ -57,7 +57,7 @@ router.get('/all', (req, res) => { // IT'S WORKING
         if (patients == null) {
             return res.json({
                 error: false,
-                route: '/patient/all',
+                route: '/patients/all',
                 HTTPVerb: 'GET',
                 message: 'PATIENT MODEL IS EMPTY'
             })
@@ -73,7 +73,7 @@ router.post('/', (req, res) => { // IT'S WORKING
     const data = req.body
     return res.status(200).send({
         error: false,
-        route: '/patient/',
+        route: '/patients/',
         HTTPVerb: 'POST',
         message: 'Patient POST is Alright',
         body: data

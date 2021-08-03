@@ -11,11 +11,11 @@ app.use(express.json())
 // Importing External Routes
 // const loginRoute = require('./src/routes/login/index')
 const employeeRoute = require('./src/routes/employee/index'), // IT'S WORKING
-    patientRoute = require('./src/routes/patient/index'), // IT'S WORKING
+    patientRoute = require('./src/routes/patients/index'), // IT'S WORKING
     oxygenRoute = require('./src/routes/oxygen/index'),
     historicRoute = require('./src/routes/historic/index'),
-    signInPatient = require('./src/routes/singIn/patients/index'), // IT'S WORKING
-    signInEmployee = require('./src/routes/singIn/employees/index') // IT'S WORKING
+    signInPatient = require('./src/routes/singIn/patient/index'), // IT'S WORKING
+    signInEmployee = require('./src/routes/singIn/employee/index') // IT'S WORKING
 
 /** Main page GET Method */
 app.get('/', async(req, res) => { // IT'S WORKING
@@ -40,12 +40,12 @@ app.post('/', async(req, res) => { // IT'S WORKING
 // app.use('/login', loginRoute) // LOGIN ROUTE
 
 
-app.use('/employee', employeeRoute) // EMPLOYEE ROUTE
-app.use('/patient', patientRoute) // PATIENT ROUTE
+app.use('/employees', employeeRoute) // EMPLOYEE ROUTE
+app.use('/patients', patientRoute) // PATIENT ROUTE
 app.use('/oxygen', oxygenRoute) // OXYGEN ROUTE   
 app.use('/historic', historicRoute) // HISTORIC ROUTE
-app.use('/patients', signInPatient) // PATIENT REGISTER ROUTE
-app.use('/employees', signInEmployee) // EMPLOYEE REGISTER ROUTE
+app.use('/patient', signInPatient) // PATIENT REGISTER ROUTE
+app.use('/employee', signInEmployee) // EMPLOYEE REGISTER ROUTE
 
 // Error Handling
 app.use((req, res, next) => {

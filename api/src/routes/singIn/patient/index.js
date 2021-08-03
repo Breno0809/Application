@@ -9,7 +9,7 @@ const Patients = require('../../../models/Patients')
 router.get('/', (req, res) => {
     res.status(200).send({
         error: false,
-        route: '/patients/',
+        route: '/patient/',
         HTTPVerb: 'GET',
         message: 'Patient registration Area is Alright'
     })
@@ -26,7 +26,7 @@ router.post('/', async(req, res, next) => {
         console.log(`> Registered patient. Welcome '${user.nomeCompleto}'`);
         return res.json({
             error: false,
-            route: '/patients/',
+            route: '/patient/',
             HTTPVerb: 'POST',
             message: `Patient record created successful. Welcome '${user.nomeCompleto}'`
         })
