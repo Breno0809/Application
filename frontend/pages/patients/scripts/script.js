@@ -1,4 +1,4 @@
-const url = 'http://localhost:8989/patient/' // PATIENTS ROUTE
+const url = 'http://localhost:8989/patients/' // PATIENTS ROUTE
 const main = document.querySelector("main")
 const searchUser = document.querySelector('input[name="searchUser"]')
 const showAllPatients = document.querySelector('button#showEveryone')
@@ -94,6 +94,23 @@ const addRecords = users => {
             }
         }
     }
+
+
+    const tds = document.querySelectorAll('td.userLink')
+    tds.forEach(td => td.addEventListener('click', event => {
+        const clikedElement = event.path[1]
+
+        const userId = clikedElement.querySelector('td.userLink')
+        const userIdAsValue = userId.innerHTML
+
+        const userIdAsRoute = localStorage.setItem('userId', userIdAsValue)
+
+        console.log(userIdAsRoute)
+
+        console.log(`ID do Usuário: ${userIdAsValue}`)
+        window.location.href = `http://127.0.0.1:5500/frontend/pages/patient`
+            // rota de busca: `.../patient/userId?id=${userIdAsValue}`
+    }))
 }
 
 const searchByAllUsers = async() => {
@@ -133,7 +150,7 @@ submitSearchUser.addEventListener('click', async() => {
         }
     } catch (err) {
         console.error(err);
-        window.alert(err)
+        // window.alert(err)
     }
 })
 
