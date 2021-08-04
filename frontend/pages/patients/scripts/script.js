@@ -5,11 +5,11 @@ const showAllPatients = document.querySelector('button#showEveryone')
 const printTable = document.querySelector('button#printTable')
 const submitSearchUser = document.querySelector('label[for="searchUser"]')
 
-const getUser = async(url, nameParams) => {
+const getUser = async(endpoint, nameParams) => {
     if (!nameParams) {
         // ALL PATIENTS
         try {
-            const response = await fetch(`${url}all`)
+            const response = await fetch(`${endpoint}all`)
             const users = await response.json()
             return users
         } catch (error) {
@@ -19,7 +19,7 @@ const getUser = async(url, nameParams) => {
     }
     try {
         // PATIENT BY NAME
-        const response = await fetch(`${url}search?name=${nameParams}`)
+        const response = await fetch(`${endpoint}search?name=${nameParams}`)
         const users = await response.json()
         return users
     } catch (err) {
