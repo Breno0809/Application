@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="./styles/aside.css" type="text/css">
     <link rel="stylesheet" href="./styles/oxiTable.css" type="text/css">
 
+    <link rel="stylesheet" href="./styles/span.css" type="text/css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap">
 
     <script src="./scripts/script.js" defer></script>
@@ -38,77 +40,37 @@
     </header>
     <main>
         <article>
-            <aside>
+            <aside class="userInfo">
                 <h1>Paciente: <span class="pName"></span></h1>
 
-                <div class="userColumn">
-                    <label for="">Nome Completo</label>
-                    <div class="dataBox">Aqui terá o nome do Paciente</div>
-                </div>
-                <div class="userColumn">
-                    <label for="">Data de Nascimento</label>
-                    <div class="dataBox">DD/MM/AAAA</div>
-                </div>
-                <div class="userColumn">
-                    <label for="">Cartão do SUS</label>
-                    <div class="dataBox">888 8888 8888 8888</div>
-                </div>
-
-
-                <div class="userColumn">
-                    <label for="">RG do Paciente</label>
-                    <div class="dataBox">99.999.999-XX</div>
-                </div>
-                <div class="userColumn">
-                    <label for="">CPF do Paciente</label>
-                    <div class="dataBox">999.999.999-XX</div>
-                </div>
-                <div class="userColumn">
-                    <label for="">Telefone</label>
-                    <div class="dataBox">(99) 99999-9999</div>
-                </div>
-
-
-                <div class="userColumn">
-                    <label for="">Celular</label>
-                    <div class="dataBox">(99) 99999-9999</div>
-                </div>
-                <div class="userColumn">
-                    <label for="">Email</label>
-                    <div class="dataBox">nome.sobrenome@email.com</div>
-                </div>
-                <div class="userColumn">
-                    <label for="">Endereço</label>
-                    <div class="dataBox">Endereço do Paciente. Cidade-Estado, Rua e bairro</div>
-                </div>
-
-                <div class="userColumn">
-                    <label for="">Responsável</label>
-                    <div class="dataBox">Aqui terá o nome do Responsável</div>
-                </div>
-                <div class="userColumn">
-                    <label for="">Email do Responsável</label>
-                    <div class="dataBox">11.111.111-YY</div>
-                </div>
-                <div class="userColumn">
-                    <label for="">Celular do Responsável</label>
-                    <div class="dataBox">111.111.111-YY</div>
-                </div>
             </aside>
-            <aside>
+            <aside class="oxygenInfo">
                 <h1>Saturação de Oxigênio</h1>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                                <th>Manhã</th>
+                                <th>Tarde</th>
+                                <th>Noite</th>
                             </tr>
                         </thead>
                         <tbody>
-
+                            <tr class="row">
+                                <td><span class="oxygenField high">SP O²: 98.9</span></td>
+                                <td><span class="oxygenField low">SP O²: 90.0</span></td>
+                                <td>SP O²: 95.2</td>
+                            </tr>
+                            <tr class="row">
+                                <td><span class="oxygenField low">SP O²: 90.0</span></td>
+                                <td><span class="oxygenField high">SP O²: 98.9</span></td>
+                                <td>SP O²: 95.2</td>
+                            </tr>
+                            <tr class="row">
+                                <td>SP O²: 95.2</td>
+                                <td><span class="oxygenField high">SP O²: 98.9</span></td>
+                                <td><span class="oxygenField low">SP O²: 90.0</span></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
