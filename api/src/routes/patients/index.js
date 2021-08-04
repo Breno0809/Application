@@ -69,6 +69,27 @@ router.get('/all', (req, res) => { // IT'S WORKING
     })
 })
 
+router.get('/user/:id', async(req, res, next) => {
+    const userIdParams = req.params.id
+    const userByIdAsObject = await Patients.findOne({
+        where: {
+            idPatient: userIdParams
+        }
+    })
+    if (userByIdAsObject === null) {
+        console.log(`> Patient with id:${userIdParams} not found!`)
+        return res.status(404).send({
+            message: 'Patient not found',
+            status: 404,
+            dataUser: false
+        })
+    } else res.status(302).send({
+        message: 'Patient was found',
+        status: 302,
+        dataUser: userByIdAsObject
+    })
+})
+
 router.post('/', (req, res) => { // IT'S WORKING
     const data = req.body
     return res.status(200).send({
