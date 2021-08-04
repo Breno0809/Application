@@ -1,0 +1,41 @@
+/* Oxygen Table default settings*/
+
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.5rem 0;
+}
+
+.table table {
+    width: 100%;
+    min-width: 300px;
+    margin: 1rem 0 1rem;
+    border-spacing: 0;
+}
+
+th {
+    padding: 1rem;
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid steelblue;
+}
+
+td {
+    padding: .5rem 0rem .5rem;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(70, 131, 180, 0.3);
+}
+
+tr.row:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+td:hover {
+    cursor: pointer;
+}
+
+td:first-child {
+    text-align: center;
+    padding-right: 10px;
+}

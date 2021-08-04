@@ -16,6 +16,6 @@ article aside {
     background: var(--form-bg-color);
     margin: 1rem 0 1rem 0;
     width: 600px;
-    height: 465px;
+    min-height: 465px;
     padding: 1rem;
 }

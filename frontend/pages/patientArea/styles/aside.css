@@ -6,13 +6,13 @@ aside h1 {
 }
 
 aside label {
-    margin-right: .2rem;
+    margin-right: 1rem;
 }
 
 div.userColumn {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-bottom: .5rem;
 }
 
