@@ -13,7 +13,7 @@ const patientExists = obj => Object.keys(obj).length === 0
 router.get('/', res => { // IT'S WORKING
     res.status(200).send({
         error: false,
-        route: '/patient/',
+        route: '/patients/',
         HTTPVerb: 'GET',
         message: 'Patient Area is Alright'
     })
@@ -76,14 +76,12 @@ router.get('/user/:id', async(req, res, next) => {
             idPatient: userIdParams
         }
     })
-    if (userByIdAsObject === null) {
-        console.log(`> Patient with id:${userIdParams} not found!`)
-        return res.status(404).send({
-            message: 'Patient not found',
-            status: 404,
-            dataUser: false
-        })
-    } else res.status(302).send({
+    if (userByIdAsObject === null) res.status(404).send({
+        message: 'Patient not found',
+        status: 404,
+        dataUser: false
+    })
+    else res.status(302).send({
         message: 'Patient was found',
         status: 302,
         dataUser: userByIdAsObject
