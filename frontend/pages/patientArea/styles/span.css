@@ -1,0 +1,15 @@
+/* Span default settings*/
+
+span.empty,
+span.oxygenField {
+    font-weight: bold;
+}
+
+span.high {
+    color: green;
+}
+
+span.low,
+span.empty {
+    color: red;
+}
