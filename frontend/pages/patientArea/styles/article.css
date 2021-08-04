@@ -2,17 +2,19 @@
 
 article {
     background-color: var(--form-bg-color);
-    width: 100%;
-    min-height: 50vh;
-    margin-top: .6rem;
-    padding: 1rem;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: .6rem;
+    padding: 0 1rem 0 1rem;
+    width: 100%;
+    min-height: 50vh;
 }
 
 article aside {
     background: var(--form-bg-color);
+    margin: 1rem 0 1rem 0;
     width: 600px;
     height: 465px;
     padding: 1rem;
