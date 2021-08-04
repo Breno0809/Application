@@ -12,7 +12,7 @@
     "editor.renderLineHighlight": "gutter",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "tslint.autoFixOnSave": true,
     "window.zoomLevel": 0,
     "extensions.ignoreRecommendations": false,
