@@ -17,6 +17,9 @@
     /* TEXT COLOR */
     --form-h2-color: rgba(243, 243, 243, 0.753);
     --text-color: rgb(243, 243, 243);
+    /* SPAN COLOR */
+    --span-high-color: rgb(82, 196, 82);
+    --span-low-color: rgb(255, 107, 107);
 }
 
 * {
