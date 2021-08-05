@@ -6,10 +6,10 @@ span.oxygenField {
 }
 
 span.high {
-    color: green;
+    color: var(--span-high-color);
 }
 
 span.low,
 span.empty {
-    color: red;
+    color: var(--span-low-color);
 }
