@@ -70,7 +70,9 @@ const showPatientInfo = (data) => {
 }
 
 window.addEventListener('load', async() => {
-    const resp = await getUser(url, 8)
+    const userIdInLocalStorage = localStorage.getItem('userId')
+    const resp = await getUser(url, userIdInLocalStorage)
     const user = resp.dataUser
+    document.title = user.nomeCompleto
     showPatientInfo(user, fieldNameAsArray)
 })
