@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultar Pacientes</title>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link rel="stylesheet" href="../styleDefaults/settingsDefault.css" type="text/css">
     <link rel="stylesheet" href="../styleDefaults/header.css" type="text/css">
     <link rel="stylesheet" href="../styleDefaults/footer.css" type="text/css">
@@ -38,8 +40,8 @@
     <main>
         <div class="parent">
             <div class="child">
-                <input type="text" name="searchUser" placeholder="Insira aqui o nome do Paciente">
-                <label for="searchUser"><img alt="Lupa"></label>
+                <input type="text" name="searchUser" placeholder="Insira aqui o nome do Paciente" autocomplete="off">
+                <label for="searchUser"><i class="material-icons">search</i></label>
             </div>
             <button id="showEveryone">Todos</button>
             <button id="printTable">Imprimir</button>
