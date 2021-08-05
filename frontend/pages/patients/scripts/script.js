@@ -99,17 +99,10 @@ const addRecords = users => {
     const tds = document.querySelectorAll('td.userLink')
     tds.forEach(td => td.addEventListener('click', event => {
         const clikedElement = event.path[1]
-
         const userId = clikedElement.querySelector('td.userLink')
         const userIdAsValue = userId.innerHTML
-
         const userIdAsRoute = localStorage.setItem('userId', userIdAsValue)
-
-        console.log(userIdAsRoute)
-
-        console.log(`ID do Usuário: ${userIdAsValue}`)
-        window.location.href = `http://127.0.0.1:5500/frontend/pages/patient`
-            // rota de busca: `.../patient/userId?id=${userIdAsValue}`
+        window.open(`http://127.0.0.1:5500/frontend/pages/patientArea/index.html`)
     }))
 }
 
