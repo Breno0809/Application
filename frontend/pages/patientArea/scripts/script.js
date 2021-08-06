@@ -1,6 +1,14 @@
 const url = 'http://localhost:8989/patients/'
 const patientInfo = document.querySelector('aside.userInfo')
 const nameSpace = document.querySelector('span.pName')
+const oxygenField = document.querySelectorAll('span.oxygenField')
+
+// const oxygenValue = new Array()
+// oxygenField.forEach(field => {
+//     const fieldValue = field.innerText
+//     const fieldValueAsNumber = parseFloat(fieldValue.replace('SP O²: ', ''))
+//     return oxygenValue.push(fieldValueAsNumber)
+// })
 
 const fieldNameAsArray = new Array(
     'Código', 'Nome', 'Idade', 'Cartão do SUS', 'RG', 'CPF', 'Telefone', 'Celular',
