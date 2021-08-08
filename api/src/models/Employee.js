@@ -1,6 +1,6 @@
 const Sequelize = require('Sequelize')
-const sequelize = require('../config/db')
-const db = require('../config/db')
+const sequelize = require('../database/index')
+const db = require('../database/index')
 
 const Employee = db.sequelize.define("Funcionarios", {
     idEmployee: {

@@ -1,6 +1,6 @@
 const Sequelize = require('Sequelize')
-const sequelize = require('../config/db')
-const db = require('../config/db')
+const sequelize = require('../database/index')
+const db = require('../database/index')
 
 const Historic = db.sequelize.define("Historico", {
     idHistoric: {
