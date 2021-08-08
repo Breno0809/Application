@@ -14,6 +14,6 @@ const Historic = db.sequelize.define("Historico", {
 // Create Table
 // This commando must be execute only once
 // Historic.sync({ force: true })
-Historic.sync()
+// Historic.sync()
 
 module.exports = Historic

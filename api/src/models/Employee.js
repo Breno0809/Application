@@ -27,6 +27,6 @@ const Employee = db.sequelize.define("Funcionarios", {
 // Create Table
 // This command must be execute only once
 // Employee.sync({ force: true })
-Employee.sync()
+// Employee.sync()
 
 module.exports = Employee

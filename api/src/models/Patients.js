@@ -33,6 +33,6 @@ const Patients = db.sequelize.define("Pacientes", {
 // Create Table
 // This command must be execute only once
 // Patients.sync({ force: true })
-Patients.sync()
+// Patients.sync()
 
 module.exports = Patients
