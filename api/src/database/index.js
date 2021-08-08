@@ -1,6 +1,26 @@
 const Sequelize = require('Sequelize')
-const dbConfig = require('../config/db')
+    // Connection with database MySQL
+const sequelize = new Sequelize('aoms', 'root', '@BReno08#09;', {
+    host: 'localhost', // Default root of System
+    dialect: 'mysql' // Type of data base
+        /** dialect: one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
+})
 
-const connection = new Sequelize(dbConfig)
+sequelize.authenticate().then(() => {
+    console.log("> Successful database connection");
+}).catch(err => {
+    console.log("> Unsuccessful database connection");
+    console.error(err);
+})
 
-module.exports = connection
+module.exports = {
+    Sequelize: Sequelize,
+    sequelize: sequelize
+}
+
+// const Sequelize = require('Sequelize')
+// const dbConfig = require('../config/db')
+
+// const connection = new Sequelize(dbConfig)
+
+// module.exports = connection
