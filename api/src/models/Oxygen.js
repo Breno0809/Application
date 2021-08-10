@@ -19,4 +19,9 @@ const Oxygen = db.sequelize.define("Oxygen", {
     }
 })
 
+// Create Table
+// This command must be execute only once
+// Oxygen.sync({ force: true })
+// Oxygen.sync()
+
 module.exports = Oxygen
