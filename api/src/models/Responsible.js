@@ -12,7 +12,7 @@ const Responsible = db.sequelize.define("Responsible", {
     idContact: {
         type: Sequelize.INTEGER.ZEROFILL.UNSIGNED,
         allowNull: false,
-        reference: {
+        references: {
             model: 'Contact',
             key: 'idContact'
         },
