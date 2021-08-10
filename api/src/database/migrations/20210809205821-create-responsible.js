@@ -12,7 +12,7 @@ module.exports = {
             idContact: {
                 type: Sequelize.INTEGER.ZEROFILL.UNSIGNED,
                 allowNull: false,
-                reference: {
+                references: {
                     model: 'Contact',
                     key: 'idContact'
                 },
