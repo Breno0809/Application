@@ -1,0 +1,19 @@
+/* Input settings default */
+
+input,
+label {
+    /* RESET APPEAREANCE */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    /* BOX */
+    /* width: 100%;
+    padding: 16px 0;
+    border: none;
+    border-bottom: 1px solid var(--primary-theme-color-v3);
+    background-color: transparent;
+    outline: none; */
+    /* TEXT */
+    /* color: var(--text-color);
+    font-size: 1em; */
+}
