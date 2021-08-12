@@ -1,0 +1,9 @@
+/* Form settings default */
+
+form>div {
+    display: flex;
+}
+
+div.inputBox {
+    flex-direction: column;
+}
