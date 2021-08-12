@@ -12,3 +12,12 @@ footer {
     flex-shrink: 0;
     padding: .6rem;
 }
+
+
+/* positioned at the bottom of the page */
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
