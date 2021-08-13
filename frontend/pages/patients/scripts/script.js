@@ -29,7 +29,7 @@ const getUser = async(endpoint, nameParams) => {
 }
 
 const createNewTable = container => {
-    const headerAsName = ['Código', 'Nome Completo', 'Data de Nascimento', 'Urgência']
+    const headerAsName = ['Código', 'Nome Completo', 'Idade', 'Urgência']
     let table = document.createElement('table'),
         tHead = document.createElement('thead'),
         tBody = document.createElement('tbody'),
