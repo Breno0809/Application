@@ -1,19 +1,22 @@
 /* Input settings default */
 
-input,
-label {
+input {
     /* RESET APPEAREANCE */
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
     /* BOX */
-    /* width: 100%;
-    padding: 16px 0;
-    border: none;
-    border-bottom: 1px solid var(--primary-theme-color-v3);
+    padding: .2rem .3rem;
+    border: 1px solid rgb(125, 125, 125);
     background-color: transparent;
-    outline: none; */
+    outline: none;
     /* TEXT */
-    /* color: var(--text-color);
-    font-size: 1em; */
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+input.inputText {
+    border: 1px solid rgb(125, 125, 125);
+    background-color: transparent;
+    outline: none;
 }

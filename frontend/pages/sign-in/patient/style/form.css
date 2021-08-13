@@ -1,9 +1,11 @@
 /* Form settings default */
 
-form>div {
+div.inputBox {
     display: flex;
+    flex-direction: row;
+    padding: .3rem;
 }
 
-div.inputBox {
-    flex-direction: column;
+div.inputBox>label {
+    margin-right: .3rem;
 }

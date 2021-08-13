@@ -7,7 +7,7 @@ article {
     flex-wrap: wrap;
     /* justify-content: space-around; */
     margin: .6rem 0;
-    padding: 0 1rem 0 1rem;
+    padding: 1rem;
     width: 100%;
     min-height: 50vh;
 }
