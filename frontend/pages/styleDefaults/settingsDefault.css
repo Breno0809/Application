@@ -40,3 +40,7 @@ body {
     background-color: var(--main-bg-color-v5);
     color: var(--text-color);
 }
+
+.nonSelectElement {
+    user-select: none;
+}
