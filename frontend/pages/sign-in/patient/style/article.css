@@ -15,4 +15,5 @@ article {
 article>h1 {
     text-align: center;
     padding-bottom: 1rem;
+    font-size: 2em;
 }
