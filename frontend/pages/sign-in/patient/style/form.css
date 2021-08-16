@@ -22,9 +22,16 @@ div.responsibleData {
 div.inputBox {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
     padding: .3rem;
+    width: 100%;
 }
 
 div.inputBox>label {
     margin-right: .3rem;
+}
+
+div.inputData {
+    width: 10px;
 }
