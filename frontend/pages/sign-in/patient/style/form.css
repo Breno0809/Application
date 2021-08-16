@@ -8,16 +8,33 @@ form {
     justify-content: space-evenly;
 }
 
-div>h2 {
-    text-align: center;
-}
-
-div.patientData,
-div.responsibleData {
+div.dataArea {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    /* BOX */
+    padding: 1rem;
 }
+
+div>h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+/* div.inputBox {
+    background-color: rgba(70, 131, 180, 0.25);
+}
+
+div.dataArea {
+    background-color: rgba(70, 131, 180, 0.25);
+    border-top: 15px solid rgb(70, 131, 180);
+    border-radius: 10px 10px 0 0;
+}
+
+div.dataArea>.inputBox:first-of-type {
+    border-top: 1px solid rgb(70, 131, 180);
+} */
 
 div.inputBox {
     display: flex;
