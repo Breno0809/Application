@@ -15,8 +15,16 @@ input {
     font-size: 1em;
 }
 
-input.inputText {
+input.inputData {
     border: 1px solid rgb(125, 125, 125);
     background-color: transparent;
     outline: none;
+}
+
+.inputData:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.inputData:focus {
+    background-color: rgba(255, 255, 255, 0.4);
 }
