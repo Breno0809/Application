@@ -1,5 +1,24 @@
 /* Form settings default */
 
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
+}
+
+div>h2 {
+    text-align: center;
+}
+
+div.patientData,
+div.responsibleData {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 div.inputBox {
     display: flex;
     flex-direction: row;
