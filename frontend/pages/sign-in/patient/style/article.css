@@ -9,9 +9,10 @@ article {
     margin: .6rem 0;
     padding: 1rem;
     width: 100%;
-    min-height: 50vh;
+    /* min-height: 50vh; */
 }
 
 article>h1 {
     text-align: center;
+    padding-bottom: 1rem;
 }
