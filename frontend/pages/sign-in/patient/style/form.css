@@ -11,7 +11,7 @@ form {
 div.dataArea {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     /* BOX */
     padding: 1rem;
 }
