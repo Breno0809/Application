@@ -89,7 +89,12 @@
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Situação</label>
-                            <input required type="text" class="inputData" autocomplete="off">
+                            <input required list="situation" type="text" class="inputData" data-type-id="0" autocomplete="off">
+                            <datalist id="situation">
+                                <option data-id-situation="0" value="Tratamento"></option>
+                                <option data-id-situation="1" value="Observação"></option>
+                                <option data-id-situation="2" value="Óbito"></option>
+                            </datalist>
                         </div>
                     </div>
                     <div class="dataArea addressData">
