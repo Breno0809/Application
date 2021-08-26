@@ -4,8 +4,6 @@ article {
     background-color: var(--form-bg-color);
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    /* justify-content: space-around; */
     margin: .6rem 0;
     padding: 1rem;
     width: 100%;
@@ -13,7 +11,8 @@ article {
 }
 
 article>h1 {
-    text-align: center;
-    /* padding-bottom: 1rem; */
     font-size: 2em;
+    text-align: center;
+    /* margin-bottom: 2rem; */
+    /* padding-bottom: 1rem; */
 }
