@@ -50,47 +50,47 @@
                         <hr width="100%" color="#4683b4">
                         <div class="inputBox">
                             <label for="" class="dataInput">Nome</label>
-                            <input required type="text" name="fullName" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required type="text" name="fullName" class="inputData" data-mask-name="commonText" data-type-id="0" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Data de Nascimento</label>
-                            <input required type="text" name="birthday" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required type="date" name="birthday" class="inputData" data-mask-name="date" data-type-id="0" autocomplete="off" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Telefone</label>
-                            <input required type="text" name="phone" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required type="tel" name="phone" class="inputData" data-mask-name="phone" data-type-id="0" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Celular</label>
-                            <input required type="text" name="cellphone" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required type="tel" name="cellphone" class="inputData" data-mask-name="phone" data-type-id="0" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Email</label>
-                            <input required type="text" name="email" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required type="email" name="email" class="inputData" data-mask-name="email" data-type-id="0" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Cartão do SUS</label>
-                            <input required type="text" name="SUSCard" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required type="text" name="SUSCard" class="inputData" data-mask-name="susCard" data-type-id="0" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">RG</label>
-                            <input required type="text" name="RG" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required type="text" name="RG" class="inputData" data-mask-name="rg" data-type-id="0" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">CPF</label>
-                            <input required type="text" name="CPF" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required type="text" name="CPF" class="inputData" data-mask-name="cpf" data-type-id="0" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Comorbidade</label>
-                            <input required type="text" name="comorbidity" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required type="text" name="comorbidity" class="inputData" data-mask-name="commonText" data-type-id="0" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Urgência</label>
-                            <input required type="text" name="urgency" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required type="text" name="urgency" class="inputData" data-mask-name="commonText" data-type-id="0" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Situação</label>
-                            <input required list="situationList" type="text" name="situation" class="inputData" data-type-id="0" autocomplete="off">
+                            <input required list="situationList" type="text" name="situation" class="inputData" data-mask-name="commonText" data-type-id="0" autocomplete="off">
                             <datalist id="situationList">
                                 <option data-id-situation="0" value="Tratamento"></option>
                                 <option data-id-situation="1" value="Observação"></option>
@@ -103,27 +103,27 @@
                         <hr width="100%" color="#4683b4">
                         <div class="inputBox">
                             <label for="" class="dataInput">Rua</label>
-                            <input required type="text" name="street" class="inputData" data-type-id="1" autocomplete="off">
+                            <input required type="text" name="street" class="inputData" data-mask-name="commonText" data-type-id="1" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Número</label>
-                            <input required type="text" name="number" class="inputData" data-type-id="1" autocomplete="off">
+                            <input required type="number" name="number" class="inputData" data-mask-name="number" data-type-id="1" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Bairro</label>
-                            <input required type="text" name="district" class="inputData" data-type-id="1" autocomplete="off">
+                            <input required type="text" name="district" class="inputData" data-mask-name="commonText" data-type-id="1" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Cidade</label>
-                            <input required type="text" name="city" class="inputData" data-type-id="1" autocomplete="off">
+                            <input required type="text" name="city" class="inputData" data-mask-name="commonText" data-type-id="1" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Completo</label>
-                            <input required type="text" name="complement" class="inputData" data-type-id="1" autocomplete="off">
+                            <input required type="text" name="complement" class="inputData" data-mask-name="alphanumeric" data-type-id="1" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">CEP</label>
-                            <input required type="text" name="zipCode" class="inputData" data-type-id="1" autocomplete="off">
+                            <input required type="text" name="zipCode" class="inputData" data-mask-name="zipcode" data-type-id="1" autocomplete="off">
                         </div>
                     </div>
                     <div class="dataArea responsibleData">
@@ -131,19 +131,19 @@
                         <hr width="100%" color="#4683b4">
                         <div class="inputBox">
                             <label for="" class="dataInput">Nome</label>
-                            <input type="text" name="responsibleFullName" class="inputData" data-type-id="2" autocomplete="off">
+                            <input type="text" name="responsibleFullName" class="inputData" data-mask-name="commonText" data-type-id="2" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Telefone</label>
-                            <input type="text" name="responsiblePhone" class="inputData" data-type-id="2" autocomplete="off">
+                            <input type="text" name="responsiblePhone" class="inputData" data-mask-name="phone" data-type-id="2" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Celular</label>
-                            <input type="text" name="responsibleCellphone" class="inputData" data-type-id="2" autocomplete="off">
+                            <input type="text" name="responsibleCellphone" class="inputData" data-mask-name="phone" data-type-id="2" autocomplete="off">
                         </div>
                         <div class="inputBox">
                             <label for="" class="dataInput">Email</label>
-                            <input type="email" name="responsibleEmail" class="inputData" data-type-id="2" autocomplete="off">
+                            <input type="email" name="responsibleEmail" class="inputData" data-mask-name="email" data-type-id="2" autocomplete="off">
                         </div>
                     </div>
                 </div>
