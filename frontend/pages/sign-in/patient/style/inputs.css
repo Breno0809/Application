@@ -6,6 +6,8 @@ input {
     -webkit-appearance: none;
     appearance: none;
     /* BOX */
+    width: 207px;
+    height: 26px;
     background-color: transparent;
     padding: .2rem .3rem;
     border: 1px solid rgb(125, 125, 125);
@@ -24,17 +26,25 @@ input:focus {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+
+/*  */
+
 .fieldEmpty {
+    /* If the field is empty */
     background-color: rgba(255, 0, 0, 0.2);
     border: 1px solid rgb(255, 0, 0);
     box-shadow: 0px 0px 0px 1px rgb(255, 59, 59);
 }
 
 .fieldFilled {
+    /* If the field is filled */
     background-color: rgba(21, 255, 0, 0.2);
     border: 1px solid rgb(0, 255, 0);
     box-shadow: 0px 0px 0px 1px rgb(0, 255, 0);
 }
+
+
+/*  */
 
 .signInPatient {
     /* RESET APPEAREANCE */
