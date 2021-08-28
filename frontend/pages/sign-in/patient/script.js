@@ -1,6 +1,16 @@
 const buttonSubmit = document.querySelector('button[type="submit"]')
 const allInputs = document.querySelectorAll('input')
 
+const inputDate = document.querySelector('input[type="date"]')
+const getDateToday = () => {
+    const date = new Date(),
+        day = String(date.getDate()).padStart(2, '0'),
+        month = String(date.getMonth() + 1).padStart(2, '0'),
+        year = date.getFullYear()
+    return `${year}-${month}-${day}`
+}
+inputDate.setAttribute('max', getDateToday())
+
 const addClassToField = (element, className = 'empty-class') => { element.classList.add(className) }
 const removeClassToField = (element, className = 'empty-class') => { element.classList.remove(className) }
 
