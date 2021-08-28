@@ -14,6 +14,22 @@ inputDate.setAttribute('max', getDateToday())
 const addClassToField = (element, className = 'empty-class') => { element.classList.add(className) }
 const removeClassToField = (element, className = 'empty-class') => { element.classList.remove(className) }
 
+const checkFieldTypeInElement = element => {
+    return {
+        'commonText': `"commonText" don't need to validation`,
+        'date': () => { 'Validation for "date"' },
+        'phone': () => { 'Validation for "phone"' },
+        'email': () => { 'Validation for "email"' },
+        'susCard': () => { 'Validation for "susCard"' },
+        'rg': () => { 'Validation for "rg"' },
+        'cpf': () => { 'Validation for "cpf"' },
+        'number': () => { 'Validation for "number"' },
+        'alphanumeric': () => { 'Validation for "alphanumeric"' },
+        'zipcode': () => { 'Validation for "zipcode"' },
+        'default': 'Mask not found'
+    }[element ? element : 'default']
+}
+
 buttonSubmit.addEventListener('click', event => {
     const dataForm = document.querySelectorAll('input')
     dataForm.forEach(item => {
