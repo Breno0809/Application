@@ -11,8 +11,8 @@ const getDateToday = () => {
 }
 inputDate.setAttribute('max', getDateToday())
 
-const addClassToField = (element, className = 'empty-class') => { element.classList.add(className) }
-const removeClassToField = (element, className = 'empty-class') => { element.classList.remove(className) }
+const addClassToField = (element, className = 'empty-class') => element.classList.add(className)
+const removeClassToField = (element, className = 'empty-class') => element.classList.remove(className)
 
 const checkFieldTypeInElement = element => {
     return {
