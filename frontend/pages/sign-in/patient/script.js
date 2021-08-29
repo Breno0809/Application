@@ -69,6 +69,8 @@ allInputs.forEach(input => {
     // )
     // console.log(input);
 
+    input.addEventListener('focus', () => removeClassToField(input, 'fieldEmpty', 'fieldFilled'))
+
     input.addEventListener('blur', event => {
             const inputValue = input.value
             inputValue === '' ? (
