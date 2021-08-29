@@ -11,9 +11,12 @@ const getDateToday = () => {
 }
 inputDate.setAttribute('max', getDateToday())
 
-const addClassToField = (element, className = 'empty-class') => element.classList.add(className)
-const removeClassToField = (element, className = 'empty-class') => element.classList.remove(className)
-
+const addClassToField = (element, ...className) => {
+    for (const classProp of className) element.classList.add(classProp)
+}
+const removeClassToField = (element, ...className) => {
+    for (const classProp of className) element.classList.remove(classProp)
+}
 const checkFieldTypeInElement = element => {
     return {
         'commonText': `"commonText" don't need to validation`,
