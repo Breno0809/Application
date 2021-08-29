@@ -1,15 +1,16 @@
 #include <Arduino.h>
 
-void setup() {
-  // put your setup code here, to run once:
-  pinMode(2, OUTPUT);
-  digitalWrite(2, LOW);
+#define LED_BUILTIN 2
+void setup()
+{
+  pinMode(LED_BUILTIN, OUTPUT);
+  // digitalWrite(LED_BUILTIN, LOW);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-  digitalWrite(2, HIGH);
-  delay(1000);
-  digitalWrite(2, LOW);
-  delay(1000);
+void loop()
+{
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(2000);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(2000);
 }
