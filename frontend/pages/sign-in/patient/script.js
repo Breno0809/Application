@@ -72,20 +72,17 @@ allInputs.forEach(input => {
     input.addEventListener('focus', () => removeClassToField(input, 'fieldEmpty', 'fieldFilled'))
 
     input.addEventListener('blur', event => {
-            const inputValue = input.value
-            inputValue === '' ? (
-                // Caso campo esteja vazio
-                addClassToField(input, 'fieldEmpty'),
-                removeClassToField(input, 'fieldFilled')
-            ) : (
-                // Caso campo seja preenchido
-                addClassToField(input, 'fieldFilled'),
-                removeClassToField(input, 'fieldEmpty')
-            )
-        })
-        // if (inputDataset === 0) console.log('Dados do Paciente')
-        // if (inputDataset === 1) console.log('Endereço do Paciente')
-        // if (inputDataset === 2) console.log('Dados do Responsável')
+        const inputValue = input.value
+        inputValue === '' ? (
+            // Caso campo esteja vazio
+            addClassToField(input, 'fieldEmpty'),
+            removeClassToField(input, 'fieldFilled')
+        ) : (
+            // Caso campo seja preenchido
+            addClassToField(input, 'fieldFilled'),
+            removeClassToField(input, 'fieldEmpty')
+        )
+    })
 })
 
 // Não enviar formulário
