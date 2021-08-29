@@ -55,13 +55,13 @@ buttonSubmit.addEventListener('click', event => {
 })
 
 allInputs.forEach(input => {
-    const inputDataset = Number(input.dataset.typeId)
-
     const allAttributes = input.attributes
     const attributesNameAsArray = []
+    const attributesValueAsArray = []
 
     for (let i = 0; i < allAttributes.length; i++) {
         attributesNameAsArray.push(allAttributes[i].nodeName)
+        attributesValueAsArray.push(allAttributes[i].nodeValue)
     }
     // console.log(attributesNameAsArray.find(attr => attr === 'required') === undefined ?
     //     'não está aqui' :
