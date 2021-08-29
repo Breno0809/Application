@@ -39,11 +39,15 @@ buttonSubmit.addEventListener('click', event => {
             isRequired = itemAttributeName === 'required' ? true : false,
             fieldIsEmpty = fieldValue === '' ? true : false
 
-        itemTypeId === 2 ? (fieldIsEmpty ? (
-            isRequired ? addClassToField(item, 'fieldEmpty') : undefined
-        ) : removeClassToField(item, 'fieldEmpty')) : (fieldIsEmpty ? (
-            isRequired ? addClassToField(item, 'fieldEmpty') : undefined
-        ) : removeClassToField(item, 'fieldEmpty'))
+        itemTypeId === 2 ? (
+            fieldIsEmpty ? (
+                isRequired ? addClassToField(item, 'fieldEmpty') : undefined
+            ) : removeClassToField(item, 'fieldEmpty')
+        ) : (
+            fieldIsEmpty ? (
+                isRequired ? addClassToField(item, 'fieldEmpty') : undefined
+            ) : removeClassToField(item, 'fieldEmpty')
+        );
     })
 })
 
