@@ -22,17 +22,18 @@
     --span-low-color: rgb(255, 107, 107);
 }
 
+html {
+    font-family: "Roboto", sans-serif;
+    height: 100%;
+    box-sizing: border-box;
+}
+
 *,
 *:before,
 *:after {
     margin: 0%;
     padding: 0%;
-    box-sizing: border-box;
-}
-
-html {
-    font-family: "Roboto", sans-serif;
-    height: 100%;
+    box-sizing: inherit;
 }
 
 body {
