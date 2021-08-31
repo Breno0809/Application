@@ -3,6 +3,8 @@ const express = require('express'),
     bodyParser = require('body-parser')
 
 router.use(express.json())
+router.use(bodyParser.urlencoded({ extended: false }))
+router.use(bodyParser.json())
 
 // Importing a template
 const Patients = require('../../../models/Patients')
