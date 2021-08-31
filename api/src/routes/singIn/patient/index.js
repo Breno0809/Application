@@ -1,5 +1,6 @@
 const express = require('express'),
-    router = express.Router()
+    router = express.Router(),
+    bodyParser = require('body-parser')
 
 router.use(express.json())
 
